@@ -1,0 +1,136 @@
+﻿<Window
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Name="Window" x:Class="SandBox.MainWindow"
+		Title="SandBox"
+		WindowStyle="None" AllowsTransparency="True"
+		Width="800" Height="600" WindowStartupLocation="CenterScreen"
+		BorderBrush="Gray" BorderThickness="0.618"
+		MouseLeftButtonDown="DragWindow"
+		Initialized="Startup" >
+	
+	<Window.Resources>
+		<Storyboard x:Key="DashButton">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_Dash_Background">
+				<EasingColorKeyFrame KeyTime="0" Value="White"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FFDDDDDD"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+		
+		<Storyboard x:Key="AboutButton">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_About_Background">
+				<EasingColorKeyFrame KeyTime="0" Value="White"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FFDDDDDD"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+
+		<Storyboard x:Key="MinButton">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_Min_Background">
+				<EasingColorKeyFrame KeyTime="0" Value="#FFFFFFFF"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FFDDDDDD"/>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_Min_Foreground">
+				<EasingColorKeyFrame KeyTime="0" Value="#FF999999"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF666666"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+
+		<Storyboard x:Key="CloseButton">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_Close_Background">
+				<EasingColorKeyFrame KeyTime="0" Value="#FFFFFFFF"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FFDDDDDD"/>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_Close_Foreground">
+				<EasingColorKeyFrame KeyTime="0" Value="#FF999999"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF666666"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+	</Window.Resources>
+	
+	<Window.Triggers>
+		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="Button_Dash">
+			<BeginStoryboard x:Name="DashButton_BeginStoryboard" Storyboard="{StaticResource DashButton}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="Button_Dash">
+			<StopStoryboard BeginStoryboardName="DashButton_BeginStoryboard"/>
+		</EventTrigger>
+		
+		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="Button_About">
+			<BeginStoryboard x:Name="AboutButton_BeginStoryboard" Storyboard="{StaticResource AboutButton}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="Button_About">
+			<StopStoryboard BeginStoryboardName="AboutButton_BeginStoryboard"/>
+		</EventTrigger>
+
+		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="Button_Min">
+			<BeginStoryboard x:Name="MinButton_BeginStoryboard" Storyboard="{StaticResource MinButton}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="Button_Min">
+			<StopStoryboard BeginStoryboardName="MinButton_BeginStoryboard"/>
+		</EventTrigger>
+
+		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="Button_Close">
+			<BeginStoryboard x:Name="CloseButton_BeginStoryboard" Storyboard="{StaticResource CloseButton}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="Button_Close">
+			<StopStoryboard BeginStoryboardName="CloseButton_BeginStoryboard"/>
+		</EventTrigger>
+	</Window.Triggers>
+
+	<Grid x:Name="LayoutRoot" Margin="0,0,1.236,1.236">
+		<MediaElement x:Name="BgmPlayer" Visibility="Hidden" Volume="0.382"
+			LoadedBehavior="Manual" UnloadedBehavior="Stop"
+			Initialized="Bgm_Initialize"
+			MediaEnded="Bgm_Change"	/>
+		
+		<Button x:Name="Button_Close" Width="24"  Height="24" Margin="0,0,0,0"
+			HorizontalAlignment="Right" VerticalAlignment="Top" BorderThickness="0" Padding="0"	
+			Click="Button_Close_Click" Background="{x:Null}">
+			<Viewbox Name="Idle" Visibility="Visible">
+				<Grid Width="48" Height="48" Visibility="Visible">
+					<Rectangle x:Name="Button_Close_Background" Fill="#FFFFFFFF"/>
+					<Path x:Name="Button_Close_Foreground" Data="F1M54.0573,47.8776L38.1771,31.9974 54.0547,16.1198C55.7604,14.4141 55.7604,11.6511 54.0573,9.94531 52.3516,8.23962 49.5859,8.23962 47.8802,9.94531L32.0026,25.8229 16.1224,9.94531C14.4167,8.23962 11.6511,8.23962 9.94794,9.94531 8.24219,11.6511 8.24219,14.4141 9.94794,16.1198L25.8255,32 9.94794,47.8776C8.24219,49.5834 8.24219,52.3477 9.94794,54.0534 11.6511,55.7572 14.4167,55.7585 16.1224,54.0534L32.0026,38.1745 47.8802,54.0534C49.5859,55.7585 52.3516,55.7572 54.0573,54.0534 55.7604,52.3477 55.763,49.5834 54.0573,47.8776z"
+						  Stretch="Uniform" Fill="#FF999999" Width="18" Height="18" Margin="0,0,0,0" />
+				</Grid>
+			</Viewbox>
+		</Button>
+
+		<Button x:Name="Button_Min" Width="24"  Height="24" Margin="0,0,24,0"
+			HorizontalAlignment="Right" VerticalAlignment="Top" BorderThickness="0" Padding="0"	
+			Click="Button_Min_Click" Background="{x:Null}">
+			<Viewbox>
+				<Grid Width="48" Height="48" Visibility="Visible">
+					<Rectangle x:Name="Button_Min_Background" Fill="#FFFFFFFF"/>
+					<Path x:Name="Button_Min_Foreground" Data="F1M24,73.7799987792969L72,73.7799987792969 72,85.7799987792969 24,85.7799987792969 24,73.7799987792969z"
+							Stretch="Uniform" Fill="#FF999999" Width="20" Height="20" Margin="0,0,0,0" />
+				</Grid>
+			</Viewbox>
+		</Button>
+
+		<Button x:Name="Button_About" Width="24"  Height="24" Margin="0,0,48,0" 
+			HorizontalAlignment="Right" VerticalAlignment="Top" BorderThickness="0" Padding="0"	
+			Click="Button_About_Click" Background="{x:Null}">
+			<Viewbox>
+				<Grid Width="48" Height="48" Visibility="Visible">
+					<Rectangle x:Name="Button_About_Background" Fill="#FFFFFFFF"/>
+					<Path Data="M0.31999958,13.986001L61.251,13.986001 61.251,47.922001 0.31999958,47.922001z M32.114001,0L47.581169,0 61.488003,11.999 32.114001,11.999z M13.906711,0L29.372999,0 29.372999,11.999 0,11.999z"
+							Stretch="Uniform" Fill="#FFAC9C7B" Width="32" Height="32" Margin="0,0,0,0" />
+				</Grid>
+			</Viewbox>
+		</Button>
+		
+		<Button x:Name="Button_Dash" Width="24"  Height="24" Margin="0,0,72,0" 
+			HorizontalAlignment="Right" VerticalAlignment="Top" BorderThickness="0" Padding="0"	
+			Click="Button_Dash_Click" Background="{x:Null}">
+			<Viewbox>
+				<Grid Width="48" Height="48" Visibility="Visible">
+					<Rectangle x:Name="Button_Dash_Background" Fill="#FFFFFFFF"/>
+					<Path Data="F1M31.9258,2.66919C15.5654,2.66919 2.30273,15.9323 2.30273,32.2968 2.30273,48.6575 15.5654,61.9192 31.9258,61.9192 48.2864,61.9192 61.5527,48.6575 61.5527,32.2968 61.5527,15.9323 48.2864,2.66919 31.9258,2.66919z M22.8698,18.0287L25.3492,16.8241 30.5482,27.5298 28.0677,28.7356 22.8698,18.0287z M31.708,38.4453C29.2285,38.4453 27.22,36.4348 27.22,33.957 27.22,31.4752 29.2285,29.4648 31.708,29.4648 34.1875,29.4648 36.1998,31.4752 36.1998,33.957 36.1998,36.4348 34.1875,38.4453 31.708,38.4453z M52.1797,32.6459C51.9912,21.7317 43.1016,12.9387 32.1436,12.9387 21.1855,12.9387 12.2979,21.7317 12.1107,32.6459L7.6048,32.6459C7.79327,19.2473 18.7054,8.44263 32.1436,8.44263 45.5833,8.44263 56.4935,19.2473 56.6823,32.6459L52.1797,32.6459z"
+							Stretch="Uniform" Fill="#FF4EA6EA" Width="32" Height="32" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5"/>
+				</Grid>
+			</Viewbox>
+		</Button>
+
+	</Grid>
+		
+</Window>
