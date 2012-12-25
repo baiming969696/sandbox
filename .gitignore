@@ -168,3 +168,5 @@ pip-log.txt
 *.vshost.*
 # Only "1.ÐòÇú.mp3" as a sample music
 [^1]*.mp3
+*Microsoft*
+*System*

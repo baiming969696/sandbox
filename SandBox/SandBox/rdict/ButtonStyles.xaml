@@ -11,14 +11,17 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	
-	<SolidColorBrush x:Key="ButtonNormalBackground" Color="#FFFFFFFF" />
 
-	<SolidColorBrush x:Key="ButtonNormalForeground" Color="#FF000000" />
+	<LinearGradientBrush x:Key="ButtonNormalBackground" EndPoint="0,1" StartPoint="0,0">
+		<GradientStop Color="#F3F3F3" Offset="0"/>
+		<GradientStop Color="#EBEBEB" Offset="0.5"/>
+		<GradientStop Color="#DDDDDD" Offset="0.5"/>
+		<GradientStop Color="#CDCDCD" Offset="1"/>
+	</LinearGradientBrush>
 
 	<SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070"/>
 
-	<Style x:Key="ButtonStyle_Common" TargetType="{x:Type Button}">
+	<Style x:Key="ButtonStyle_Windows" TargetType="{x:Type Button}">
 		<Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
 		<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
 		<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
@@ -44,6 +47,91 @@
 							<Setter Property="Foreground" Value="#ADADAD"/>
 						</Trigger>
 					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="ButtonStyle_Common" TargetType="{x:Type Button}">
+		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+		<Setter Property="Background" Value="White"/>
+		<Setter Property="BorderBrush" Value="#FF707070"/>
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Padding" Value="1"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<ControlTemplate.Resources>
+						<Storyboard x:Key="MouseOver">
+							<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Background">
+								<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FFC2E0F8"/>
+							</ColorAnimationUsingKeyFrames>
+							<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="Background">
+								<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FFC2E0F8"/>
+							</ColorAnimationUsingKeyFrames>
+						</Storyboard>
+						<Storyboard x:Key="MousePressed">
+							<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Background">
+								<EasingColorKeyFrame KeyTime="0:0:0" Value="#FFC2E0F8"/>
+								<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FF4EA6EA"/>
+							</ColorAnimationUsingKeyFrames>
+							<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="Background">
+								<EasingColorKeyFrame KeyTime="0:0:0" Value="#FFC2E0F8"/>
+								<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FF4EA6EA"/>
+							</ColorAnimationUsingKeyFrames>
+							<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="Content">
+								<EasingColorKeyFrame KeyTime="0:0:0.1" Value="White"/>
+							</ColorAnimationUsingKeyFrames>
+						</Storyboard>
+					</ControlTemplate.Resources>
+					
+					<Grid>
+						<Border x:Name="Background" BorderBrush="#FF999999" BorderThickness="1" Background="White" CornerRadius="3"/>
+						<TextBlock x:Name="Content" Text="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+					</Grid>
+					
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsPressed" Value="False">
+							<Trigger.ExitActions>
+								<BeginStoryboard x:Name="MousePressed_BeginStoryboard1" Storyboard="{StaticResource MousePressed}"/>
+								<StopStoryboard BeginStoryboardName="MouseOver_BeginStoryboard"/>
+							</Trigger.ExitActions>
+							<Trigger.EnterActions>
+								<StopStoryboard BeginStoryboardName="MousePressed_BeginStoryboard1"/>
+							</Trigger.EnterActions>
+						</Trigger>
+						<Trigger Property="IsMouseOver" Value="False">
+							<Trigger.ExitActions>
+								<BeginStoryboard x:Name="MouseOver_BeginStoryboard" Storyboard="{StaticResource MouseOver}"/>
+							</Trigger.ExitActions>
+							<Trigger.EnterActions>
+								<StopStoryboard BeginStoryboardName="MouseOver_BeginStoryboard"/>
+							</Trigger.EnterActions>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="ButtonStyle_Control" TargetType="{x:Type Button}">
+		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+		<Setter Property="Background" Value="White"/>
+		<Setter Property="BorderBrush" Value="White"/>
+		<Setter Property="BorderThickness" Value="0"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Padding" Value="0.382"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Button">
+					<Grid>
+						<Border x:Name="Background" BorderBrush="White" BorderThickness="0" Background="White" CornerRadius="0"/>
+						<ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+					</Grid>
 				</ControlTemplate>
 			</Setter.Value>
 		</Setter>
