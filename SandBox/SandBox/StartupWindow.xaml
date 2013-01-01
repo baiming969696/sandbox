@@ -12,8 +12,8 @@
 	<Window.Resources>
 		<Storyboard x:Key="OnLoaded" Completed="Showup_Completed">
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="App_Sign">
-				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
-				<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
 			</DoubleAnimationUsingKeyFrames>
 		</Storyboard>
 	</Window.Resources>

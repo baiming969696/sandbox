@@ -8,7 +8,7 @@
 		MouseLeftButtonDown="DragWindow">
 
 	<Window.Resources>
-		<Storyboard x:Key="CloseButton">
+		<Storyboard x:Key="CloseButton_MouseOver">
 			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_Close_Background">
 				<EasingColorKeyFrame KeyTime="0" Value="#FFFFFFFF"/>
 				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FFDDDDDD"/>
@@ -18,14 +18,30 @@
 				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF666666"/>
 			</ColorAnimationUsingKeyFrames>
 		</Storyboard>
+		<Storyboard x:Key="CloseButton_MouseDown">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_Close_Background">
+				<EasingColorKeyFrame KeyTime="0" Value="#FFDDDDDD"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FF50A7EA"/>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_Close_Foreground">
+				<EasingColorKeyFrame KeyTime="0" Value="#FF666666"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FFFFFFFF"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
 	</Window.Resources>
 
 	<Window.Triggers>
 		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="Button_Close">
-			<BeginStoryboard x:Name="CloseButton_BeginStoryboard" Storyboard="{StaticResource CloseButton}"/>
+			<BeginStoryboard x:Name="CloseButton_MouseOver_BeginStoryboard" Storyboard="{StaticResource CloseButton_MouseOver}"/>
 		</EventTrigger>
 		<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="Button_Close">
-			<StopStoryboard BeginStoryboardName="CloseButton_BeginStoryboard"/>
+			<StopStoryboard BeginStoryboardName="CloseButton_MouseOver_BeginStoryboard"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown" SourceName="Button_Close">
+			<BeginStoryboard x:Name="CloseButton_MouseDown_BeginStoryboard" Storyboard="{StaticResource CloseButton_MouseDown}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp" SourceName="Button_Close">
+			<StopStoryboard BeginStoryboardName="CloseButton_MouseDown_BeginStoryboard"/>
 		</EventTrigger>
 	</Window.Triggers>
 

@@ -45,11 +45,11 @@ namespace SandBox
 		{
 			if (TextBox_Nickname.Text == "")
 			{
-				TextBox_Nickname_Bg.Text = "Your Name";
+				TextBox_Nickname_Bg.Visibility = Visibility.Visible;
 			}
 			else
 			{
-				TextBox_Nickname_Bg.Text = "";
+				TextBox_Nickname_Bg.Visibility = Visibility.Hidden;
 			}
 		}
 

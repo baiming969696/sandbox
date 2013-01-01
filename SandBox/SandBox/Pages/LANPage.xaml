@@ -8,6 +8,7 @@
 	Title="LANPage">
 
     <Grid>
-		<Rectangle Fill="ForestGreen" />
+		
     </Grid>
+	
 </Page>

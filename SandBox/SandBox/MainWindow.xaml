@@ -10,21 +10,41 @@
 		Initialized="Startup" >
 	
 	<Window.Resources>
-		<Storyboard x:Key="DashButton">
+		<Storyboard x:Key="DashButton_MouseOver">
 			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_Dash_Background">
 				<EasingColorKeyFrame KeyTime="0" Value="White"/>
 				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FFDDDDDD"/>
 			</ColorAnimationUsingKeyFrames>
 		</Storyboard>
-		
-		<Storyboard x:Key="AboutButton">
+		<Storyboard x:Key="DashButton_MouseDown">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_Dash_Background">
+				<EasingColorKeyFrame KeyTime="0" Value="#FFDDDDDD"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FF50A7EA"/>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_Dash_Foreground">
+				<EasingColorKeyFrame KeyTime="0" Value="#FF50A7EA"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FFFFFFFF"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+
+		<Storyboard x:Key="AboutButton_MouseOver">
 			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_About_Background">
 				<EasingColorKeyFrame KeyTime="0" Value="White"/>
 				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FFDDDDDD"/>
 			</ColorAnimationUsingKeyFrames>
 		</Storyboard>
+		<Storyboard x:Key="AboutButton_MouseDown">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_About_Background">
+				<EasingColorKeyFrame KeyTime="0" Value="#FFDDDDDD"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FF50A7EA"/>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_About_Foreground">
+				<EasingColorKeyFrame KeyTime="0" Value="#FFAC9C7B"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FFFFFFFF"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
 
-		<Storyboard x:Key="MinButton">
+		<Storyboard x:Key="MinButton_MouseOver">
 			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_Min_Background">
 				<EasingColorKeyFrame KeyTime="0" Value="#FFFFFFFF"/>
 				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FFDDDDDD"/>
@@ -34,8 +54,18 @@
 				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF666666"/>
 			</ColorAnimationUsingKeyFrames>
 		</Storyboard>
+		<Storyboard x:Key="MinButton_MouseDown">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_Min_Background">
+				<EasingColorKeyFrame KeyTime="0" Value="#FFDDDDDD"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FF50A7EA"/>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_Min_Foreground">
+				<EasingColorKeyFrame KeyTime="0" Value="#FF666666"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FFFFFFFF"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
 
-		<Storyboard x:Key="CloseButton">
+		<Storyboard x:Key="CloseButton_MouseOver">
 			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_Close_Background">
 				<EasingColorKeyFrame KeyTime="0" Value="#FFFFFFFF"/>
 				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FFDDDDDD"/>
@@ -45,39 +75,71 @@
 				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF666666"/>
 			</ColorAnimationUsingKeyFrames>
 		</Storyboard>
-
+		<Storyboard x:Key="CloseButton_MouseDown">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_Close_Background">
+				<EasingColorKeyFrame KeyTime="0" Value="#FFDDDDDD"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FF50A7EA"/>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Button_Close_Foreground">
+				<EasingColorKeyFrame KeyTime="0" Value="#FF666666"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FFFFFFFF"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
 	</Window.Resources>
 	
 	<Window.Triggers>
-		
 		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="Button_Dash">
-			<BeginStoryboard x:Name="DashButton_BeginStoryboard" Storyboard="{StaticResource DashButton}"/>
+			<BeginStoryboard x:Name="DashButton_MouseOver_BeginStoryboard" Storyboard="{StaticResource DashButton_MouseOver}"/>
 		</EventTrigger>
 		<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="Button_Dash">
-			<StopStoryboard BeginStoryboardName="DashButton_BeginStoryboard"/>
+			<StopStoryboard BeginStoryboardName="DashButton_MouseOver_BeginStoryboard"/>
 		</EventTrigger>
-		
+		<EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown" SourceName="Button_Dash">
+			<BeginStoryboard x:Name="DashButton_MouseDown_BeginStoryboard" Storyboard="{StaticResource DashButton_MouseDown}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp" SourceName="Button_Dash">
+			<StopStoryboard BeginStoryboardName="DashButton_MouseDown_BeginStoryboard"/>
+		</EventTrigger>
+
+
 		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="Button_About">
-			<BeginStoryboard x:Name="AboutButton_BeginStoryboard" Storyboard="{StaticResource AboutButton}"/>
+			<BeginStoryboard x:Name="AboutButton_MouseOver_BeginStoryboard" Storyboard="{StaticResource AboutButton_MouseOver}"/>
 		</EventTrigger>
 		<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="Button_About">
-			<StopStoryboard BeginStoryboardName="AboutButton_BeginStoryboard"/>
+			<StopStoryboard BeginStoryboardName="AboutButton_MouseOver_BeginStoryboard"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown" SourceName="Button_About">
+			<BeginStoryboard x:Name="AboutButton_MouseDown_BeginStoryboard" Storyboard="{StaticResource AboutButton_MouseDown}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp" SourceName="Button_About">
+			<StopStoryboard BeginStoryboardName="AboutButton_MouseDown_BeginStoryboard"/>
 		</EventTrigger>
 
 		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="Button_Min">
-			<BeginStoryboard x:Name="MinButton_BeginStoryboard" Storyboard="{StaticResource MinButton}"/>
+			<BeginStoryboard x:Name="MinButton_MouseOver_BeginStoryboard" Storyboard="{StaticResource MinButton_MouseOver}"/>
 		</EventTrigger>
 		<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="Button_Min">
-			<StopStoryboard BeginStoryboardName="MinButton_BeginStoryboard"/>
+			<StopStoryboard BeginStoryboardName="MinButton_MouseOver_BeginStoryboard"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown" SourceName="Button_Min">
+			<BeginStoryboard x:Name="MinButton_MouseDown_BeginStoryboard" Storyboard="{StaticResource MinButton_MouseDown}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp" SourceName="Button_Min">
+			<StopStoryboard BeginStoryboardName="MinButton_MouseDown_BeginStoryboard"/>
 		</EventTrigger>
 
 		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="Button_Close">
-			<BeginStoryboard x:Name="CloseButton_BeginStoryboard" Storyboard="{StaticResource CloseButton}"/>
+			<BeginStoryboard x:Name="CloseButton_MouseOver_BeginStoryboard" Storyboard="{StaticResource CloseButton_MouseOver}"/>
 		</EventTrigger>
 		<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="Button_Close">
-			<StopStoryboard BeginStoryboardName="CloseButton_BeginStoryboard"/>
+			<StopStoryboard BeginStoryboardName="CloseButton_MouseOver_BeginStoryboard"/>
 		</EventTrigger>
-		
+		<EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown" SourceName="Button_Close">
+			<BeginStoryboard x:Name="CloseButton_MouseDown_BeginStoryboard" Storyboard="{StaticResource CloseButton_MouseDown}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp" SourceName="Button_Close">
+			<StopStoryboard BeginStoryboardName="CloseButton_MouseDown_BeginStoryboard"/>
+		</EventTrigger>
 	</Window.Triggers>
 
 	<Grid x:Name="LayoutRoot" Margin="0">
@@ -113,7 +175,7 @@
 			<Viewbox>
 				<Grid Width="48" Height="48" Visibility="Visible">
 					<Rectangle x:Name="Button_About_Background" Fill="#FFFFFFFF"/>
-					<Path Data="M0.31999958,13.986001L61.251,13.986001 61.251,47.922001 0.31999958,47.922001z M32.114001,0L47.581169,0 61.488003,11.999 32.114001,11.999z M13.906711,0L29.372999,0 29.372999,11.999 0,11.999z"
+					<Path x:Name="Button_About_Foreground" Data="M0.31999958,13.986001L61.251,13.986001 61.251,47.922001 0.31999958,47.922001z M32.114001,0L47.581169,0 61.488003,11.999 32.114001,11.999z M13.906711,0L29.372999,0 29.372999,11.999 0,11.999z"
 							Stretch="Uniform" Fill="#FFAC9C7B" Width="32" Height="32" Margin="0,0,0,0" />
 				</Grid>
 			</Viewbox>
@@ -124,7 +186,7 @@
 			<Viewbox>
 				<Grid Width="48" Height="48" Visibility="Visible">
 					<Rectangle x:Name="Button_Dash_Background" Fill="#FFFFFFFF"/>
-					<Path Data="F1M31.9258,2.66919C15.5654,2.66919 2.30273,15.9323 2.30273,32.2968 2.30273,48.6575 15.5654,61.9192 31.9258,61.9192 48.2864,61.9192 61.5527,48.6575 61.5527,32.2968 61.5527,15.9323 48.2864,2.66919 31.9258,2.66919z M22.8698,18.0287L25.3492,16.8241 30.5482,27.5298 28.0677,28.7356 22.8698,18.0287z M31.708,38.4453C29.2285,38.4453 27.22,36.4348 27.22,33.957 27.22,31.4752 29.2285,29.4648 31.708,29.4648 34.1875,29.4648 36.1998,31.4752 36.1998,33.957 36.1998,36.4348 34.1875,38.4453 31.708,38.4453z M52.1797,32.6459C51.9912,21.7317 43.1016,12.9387 32.1436,12.9387 21.1855,12.9387 12.2979,21.7317 12.1107,32.6459L7.6048,32.6459C7.79327,19.2473 18.7054,8.44263 32.1436,8.44263 45.5833,8.44263 56.4935,19.2473 56.6823,32.6459L52.1797,32.6459z"
+					<Path x:Name="Button_Dash_Foreground" Data="F1M31.9258,2.66919C15.5654,2.66919 2.30273,15.9323 2.30273,32.2968 2.30273,48.6575 15.5654,61.9192 31.9258,61.9192 48.2864,61.9192 61.5527,48.6575 61.5527,32.2968 61.5527,15.9323 48.2864,2.66919 31.9258,2.66919z M22.8698,18.0287L25.3492,16.8241 30.5482,27.5298 28.0677,28.7356 22.8698,18.0287z M31.708,38.4453C29.2285,38.4453 27.22,36.4348 27.22,33.957 27.22,31.4752 29.2285,29.4648 31.708,29.4648 34.1875,29.4648 36.1998,31.4752 36.1998,33.957 36.1998,36.4348 34.1875,38.4453 31.708,38.4453z M52.1797,32.6459C51.9912,21.7317 43.1016,12.9387 32.1436,12.9387 21.1855,12.9387 12.2979,21.7317 12.1107,32.6459L7.6048,32.6459C7.79327,19.2473 18.7054,8.44263 32.1436,8.44263 45.5833,8.44263 56.4935,19.2473 56.6823,32.6459L52.1797,32.6459z"
 							Stretch="Uniform" Fill="#FF50A7EA" Width="32" Height="32" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5"/>
 				</Grid>
 			</Viewbox>
@@ -154,7 +216,7 @@
 				<TextBlock Text="blablabla" Margin="10,4,10,4" Foreground="Gray"/>
 				<TextBlock Text="blablabla" Margin="10,4,10,4" Foreground="Gray"/>
 				<TextBlock Text="blablabla" Margin="10,4,10,4" Foreground="Gray"/>
-				<TextBlock Text="Here you are" Margin="10,4,10,4" Foreground="Black" FontWeight="Bold" MouseDown="MouseDown_Tester"/>
+				<TextBlock Text="Here you are" Margin="10,4,10,4" Foreground="Black" FontWeight="Bold"/>
 				<TextBlock Text="blablabla" Margin="10,4,10,4" Foreground="Gray"/>
 				<TextBlock Text="blablabla" Margin="10,4,10,4" Foreground="Gray"/>
 				<TextBlock Text="blablabla" Margin="10,4,10,4" Foreground="Gray"/>
@@ -165,7 +227,7 @@
 			</StackPanel>
 			
 			<Frame x:Name="MainFrame" Grid.Column="1" Margin="8,32,8,8" 
-				  
+				   Source="Pages/Player_LANPage.xaml"
 				   Navigating="Frame_Navigating">
 				
 			</Frame>

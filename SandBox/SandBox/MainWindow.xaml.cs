@@ -182,14 +182,5 @@ namespace SandBox
 			});
 		}
 
-		private void MouseDown_Tester(object sender, System.Windows.Input.MouseButtonEventArgs e)
-		{
-			// 在此处添加事件处理程序实现。
-			// MainFrame.Navigate( new Uri("/Pages/LANPage.xaml", UriKind.Relative));
-
-			//Net.TCPServer net = new Net.TCPServer("127.0.0.1");
-			//net.Server_Setup();
-
-		}
 	}
 }
