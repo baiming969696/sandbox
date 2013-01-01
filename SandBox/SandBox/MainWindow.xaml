@@ -125,11 +125,52 @@
 				<Grid Width="48" Height="48" Visibility="Visible">
 					<Rectangle x:Name="Button_Dash_Background" Fill="#FFFFFFFF"/>
 					<Path Data="F1M31.9258,2.66919C15.5654,2.66919 2.30273,15.9323 2.30273,32.2968 2.30273,48.6575 15.5654,61.9192 31.9258,61.9192 48.2864,61.9192 61.5527,48.6575 61.5527,32.2968 61.5527,15.9323 48.2864,2.66919 31.9258,2.66919z M22.8698,18.0287L25.3492,16.8241 30.5482,27.5298 28.0677,28.7356 22.8698,18.0287z M31.708,38.4453C29.2285,38.4453 27.22,36.4348 27.22,33.957 27.22,31.4752 29.2285,29.4648 31.708,29.4648 34.1875,29.4648 36.1998,31.4752 36.1998,33.957 36.1998,36.4348 34.1875,38.4453 31.708,38.4453z M52.1797,32.6459C51.9912,21.7317 43.1016,12.9387 32.1436,12.9387 21.1855,12.9387 12.2979,21.7317 12.1107,32.6459L7.6048,32.6459C7.79327,19.2473 18.7054,8.44263 32.1436,8.44263 45.5833,8.44263 56.4935,19.2473 56.6823,32.6459L52.1797,32.6459z"
-							Stretch="Uniform" Fill="#FF75baef" Width="32" Height="32" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5"/>
+							Stretch="Uniform" Fill="#FF50A7EA" Width="32" Height="32" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5"/>
 				</Grid>
 			</Viewbox>
 		</Button>
-		
+
+		<Grid x:Name="LayoutContent">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="auto"/>
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+
+			<StackPanel x:Name="LeftBar" Grid.Column="0" HorizontalAlignment="Left" Margin="8" Width="160">
+				<TextBlock x:Name="TextBox_Year" Text="第一年" FontSize="21.333" FontWeight="Bold" Margin="15,10,0,0" />
+				<TextBlock x:Name="TextBox_Season" Text="一季度" TextAlignment="Right" FontSize="18.667" FontWeight="Bold" Margin="0,0,15,10"/>
+				<Viewbox x:Name="SandGlass" Margin="20,8,20,0">
+					<Grid>
+						<!--<Rectangle Fill="#FFFF5965" Height="55" Margin="10,10,10,512" VerticalAlignment="Bottom"/>
+						<Rectangle Fill="#FFFF5965" Height="200" Margin="10,10,10,10" VerticalAlignment="Bottom"/>-->
+						<Rectangle Fill="#FFFF5965" Height="255" Margin="10,10,10,512" VerticalAlignment="Bottom"/>
+						<Rectangle Fill="#FFFF5965" Height="265" Margin="10,10,10,10" VerticalAlignment="Bottom"/>
+						<Image Width="1024" Height="1024" Source="img/Hourglass.png"/>
+					</Grid>
+				</Viewbox>
+				<TextBlock Text="blablabla" Margin="10,20,10,4" Foreground="Gray"/>
+				<TextBlock Text="blablabla" Margin="10,4,10,4" Foreground="Gray"/>
+				<TextBlock Text="blablabla" Margin="10,4,10,4" Foreground="Gray"/>
+				<TextBlock Text="blablabla" Margin="10,4,10,4" Foreground="Gray"/>
+				<TextBlock Text="blablabla" Margin="10,4,10,4" Foreground="Gray"/>
+				<TextBlock Text="blablabla" Margin="10,4,10,4" Foreground="Gray"/>
+				<TextBlock Text="Here you are" Margin="10,4,10,4" Foreground="Black" FontWeight="Bold" MouseDown="MouseDown_Tester"/>
+				<TextBlock Text="blablabla" Margin="10,4,10,4" Foreground="Gray"/>
+				<TextBlock Text="blablabla" Margin="10,4,10,4" Foreground="Gray"/>
+				<TextBlock Text="blablabla" Margin="10,4,10,4" Foreground="Gray"/>
+				<TextBlock Text="blablabla" Margin="10,4,10,4" Foreground="Gray"/>
+				<TextBlock Text="blablabla" Margin="10,4,10,4" Foreground="Gray"/>
+				<TextBlock Text="blablabla" Margin="10,4,10,4" Foreground="Gray"/>
+				<TextBlock Text="blablabla" Margin="10,4,10,4" Foreground="Gray"/>
+			</StackPanel>
+			
+			<Frame x:Name="MainFrame" Grid.Column="1" Margin="8,32,8,8" 
+				  
+				   Navigating="Frame_Navigating">
+				
+			</Frame>
+			
+		</Grid>
 	</Grid>
 		
 </Window>

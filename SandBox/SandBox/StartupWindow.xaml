@@ -8,7 +8,7 @@
 		Width="600" Height="400" WindowStartupLocation="CenterScreen"
 		BorderBrush="Gray" BorderThickness="0.618"
 		MouseLeftButtonDown="DragWindow">
-	
+
 	<Window.Resources>
 		<Storyboard x:Key="OnLoaded" Completed="Showup_Completed">
 			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="App_Sign">
@@ -36,8 +36,8 @@
 		</Viewbox>
 
 		<ToggleButton x:Name="Button_Role" Grid.Column="1"
-					Height="100" Width="100" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top"
-					FocusVisualStyle="{x:Null}" >
+					Height="100" Margin="0,45,0,0" VerticalAlignment="Top"
+					FocusVisualStyle="{x:Null}" HorizontalAlignment="Center" >
 			<ToggleButton.Style>
 				<Style TargetType="{x:Type ToggleButton}">
 					<Setter Property="Template">
@@ -132,10 +132,9 @@
 			</ToggleButton.Style>
 		</ToggleButton>
 
-
 		<ToggleButton x:Name="Button_Mode" Grid.Column="1" 
-					  Height="100" Width="100" HorizontalAlignment="Center" Margin="0,170,0,0" VerticalAlignment="Top"
-					  FocusVisualStyle="{x:Null}" >
+					  Height="100" Margin="0,182.5,0,0" VerticalAlignment="Top"
+					  FocusVisualStyle="{x:Null}" HorizontalAlignment="Center" >
 			<ToggleButton.Style>
 				<Style TargetType="{x:Type ToggleButton}">
 					<Setter Property="Template">
@@ -224,10 +223,20 @@
 				</Style>
 			</ToggleButton.Style>
 		</ToggleButton>
+		
+		<Grid Grid.Column="1" Height="23" Margin="0,0,0,40" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="150">
 
-		<Button x:Name="Button_Login" Grid.Column="1" Content="登陆"
-				Height="20pt" Width="100" HorizontalAlignment="Center" Margin="0,0,0,45" VerticalAlignment="Bottom"
+			<Button x:Name="Button_Login" Content="登陆"
+				Width="55.5" HorizontalAlignment="Right"
 				Style="{DynamicResource ButtonStyle_Common}" Click="Button_Login_Click" />
+			
+			<TextBox x:Name="TextBox_Nickname_Bg" Height="auto" Margin="0,0,61.5,0" TextWrapping="Wrap" VerticalAlignment="Center"
+				Foreground="#FF999999" Text="Your Name" IsReadOnly="True"/>
+
+			<TextBox x:Name="TextBox_Nickname" Height="auto" Margin="0,0,61.5,0" TextWrapping="Wrap" VerticalAlignment="Center"
+					 TextChanged="Nickname_Changed" Background="{x:Null}"/>
+			
+		</Grid>
 
 		<Grid x:Name="App_Sign" Grid.Column="0" Grid.ColumnSpan="2" d:IsHidden="True">
 			<Rectangle Fill="#FFFFFFFF" Width="600" Height="400" />

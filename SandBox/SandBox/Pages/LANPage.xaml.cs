@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SandBox.page
+namespace SandBox.Pages
 {
 	/// <summary>
 	/// LANPage.xaml 的交互逻辑

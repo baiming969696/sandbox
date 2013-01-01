@@ -76,7 +76,8 @@
     <Compile Include="DashWindow.xaml.cs">
       <DependentUpon>DashWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="page\LANPage.xaml.cs">
+    <Compile Include="Net\TCPServer.cs" />
+    <Compile Include="Pages\LANPage.xaml.cs">
       <DependentUpon>LANPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="StartupWindow.xaml.cs">
@@ -90,7 +91,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="page\LANPage.xaml">
+    <Page Include="Pages\LANPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,6 +99,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="rdict\Brushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="rdict\ButtonStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -160,7 +165,12 @@
   <ItemGroup>
     <Resource Include="img\Startup.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="img\Hourglass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Sand.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath32)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 	     Other similar extension points exist, see Microsoft.Common.targets.

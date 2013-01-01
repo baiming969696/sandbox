@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -8,9 +10,10 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-
-using System.IO;
+using System.Windows.Threading;
+using System.Windows.Navigation;
 
 namespace SandBox
 {
@@ -19,9 +22,13 @@ namespace SandBox
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		//BgmPlayer
+		// BgmPlayer
 		private int		bgmIndex;
 		private bool	isBgmMute;
+
+		// Frame Fade In / Fade Out
+		private bool _allowDirectNavigation = false;
+		private NavigatingCancelEventArgs _navArgs = null;
 
 		private void Startup(object sender, EventArgs e)
 		{
@@ -123,5 +130,66 @@ namespace SandBox
 			BgmPlayer.Volume = value * value / 100; 
 		}
 
+		private void Frame_Navigating(object sender, System.Windows.Navigation.NavigatingCancelEventArgs e)
+		{
+			if (Content != null && !_allowDirectNavigation)
+			{
+				e.Cancel = true;
+				_navArgs = e;
+				this.IsHitTestVisible = false;
+				DoubleAnimation da = new DoubleAnimation(0.3d, new Duration(TimeSpan.FromMilliseconds(300)));
+				da.Completed += Frame_FadeOutCompleted;
+				MainFrame.BeginAnimation(OpacityProperty, da);
+			}
+			_allowDirectNavigation = false;
+		}
+
+		private void Frame_FadeOutCompleted(object sender, EventArgs e)
+		{
+			(sender as AnimationClock).Completed -= Frame_FadeOutCompleted;
+
+			this.IsHitTestVisible = true;
+
+			_allowDirectNavigation = true;
+			switch (_navArgs.NavigationMode)
+			{
+				case NavigationMode.New:
+					if (_navArgs.Uri == null)
+					{
+						MainFrame.Navigate(_navArgs.Content);
+					}
+					else
+					{
+						MainFrame.Navigate(_navArgs.Uri);
+					}
+					break;
+				case NavigationMode.Back:
+					MainFrame.GoBack();
+					break;
+
+				case NavigationMode.Forward:
+					MainFrame.GoForward();
+					break;
+				case NavigationMode.Refresh:
+					MainFrame.Refresh();
+					break;
+			}
+
+			Dispatcher.BeginInvoke(DispatcherPriority.Loaded,
+				(ThreadStart)delegate() {
+				DoubleAnimation da = new DoubleAnimation(1.0d, new Duration(TimeSpan.FromMilliseconds(200)));
+				MainFrame.BeginAnimation(OpacityProperty, da);
+			});
+		}
+
+		private void MouseDown_Tester(object sender, System.Windows.Input.MouseButtonEventArgs e)
+		{
+			// 在此处添加事件处理程序实现。
+			// MainFrame.Navigate( new Uri("/Pages/LANPage.xaml", UriKind.Relative));
+
+			//Net.TCPServer net = new Net.TCPServer("127.0.0.1");
+			//net.Server_Setup();
+
+		}
 	}
 }

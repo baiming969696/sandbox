@@ -99,7 +99,7 @@
 				
 		<TextBox x:Name="Signiture" Width="auto" Height="auto" BorderThickness="0" 
 			Margin="16,0,0,16" VerticalAlignment="Bottom" HorizontalAlignment="Left"
-			TextWrapping="Wrap" Text="SandBox&#xa;Version  0.0.0.1 Alpha&#xa;Author   Team1324&#xa;Contact  team1324@126.com" d:LayoutOverrides="Width" />
+			TextWrapping="Wrap" Text="SandBox&#xa;Version  0.0.0.1 Alpha&#xa;Author   Team1324&#xa;Contact  team1324@126.com" d:LayoutOverrides="Width" IsReadOnly="True"/>
 
 	</Grid>
 

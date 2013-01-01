@@ -41,6 +41,17 @@ namespace SandBox
 			this.Close();
 		}
 
+		private void Nickname_Changed(object sender, System.Windows.Controls.TextChangedEventArgs e)
+		{
+			if (TextBox_Nickname.Text == "")
+			{
+				TextBox_Nickname_Bg.Text = "Your Name";
+			}
+			else
+			{
+				TextBox_Nickname_Bg.Text = "";
+			}
+		}
 
 	}
 }
