@@ -81,8 +81,14 @@
     <Compile Include="Pages\God_LANPage.xaml.cs">
       <DependentUpon>God_LANPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\NewYearPlanningPage.xaml.cs">
+      <DependentUpon>NewYearPlanningPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Player_LANPage.xaml.cs">
       <DependentUpon>Player_LANPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PutAdvertisementPage.xaml.cs">
+      <DependentUpon>PutAdvertisementPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="StartupWindow.xaml.cs">
       <DependentUpon>StartupWindow.xaml</DependentUpon>
@@ -99,7 +105,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\NewYearPlanningPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Player_LANPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PutAdvertisementPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -178,6 +192,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\Sand.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SomeInfo.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath32)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

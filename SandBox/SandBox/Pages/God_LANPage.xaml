@@ -18,17 +18,16 @@
 			</Grid>
 		</Viewbox>
 
-
-		<Grid VerticalAlignment="Top" Margin="8,8,8,0">
+		<Grid VerticalAlignment="Top" Margin="8,8,8,0" MaxWidth="300">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition />
 				<ColumnDefinition Width="auto"/>
 			</Grid.ColumnDefinitions>
 
 			<TextBox x:Name="TextBox_HostAddress_Bg" Height="auto" TextWrapping="Wrap" VerticalAlignment="Center" Margin="8"
-					 Foreground="#FF999999" Text="Host Address" IsReadOnly="True"/>
+					 Foreground="#FF999999" Text="主机地址" IsReadOnly="True"/>
 
-			<TextBox x:Name="TextBox_HostAddress" Height="auto" TextWrapping="Wrap" VerticalAlignment="Center" Margin="8"
+			<TextBox x:Name="TextBox_HostAddress" Height="auto" VerticalAlignment="Center" Margin="8"
 					 TextChanged="HostAddress_Changed" Background="{x:Null}"/>
 		
 			<Button x:Name="SetupServer" Content="建立服务器" Grid.Column="1"
@@ -36,8 +35,8 @@
 					Style="{DynamicResource ButtonStyle_Common}"
 					Click="SetupServer_Click"/>
 		</Grid>
-		
-		<ListBox x:Name="Log" Margin="16,51,16,39" Background="#99FFFFFF" />
+
+		<ListBox x:Name="Log" Margin="16,51,16,39" Background="#99FFFFFF" MaxWidth="450" />
 
 		<Button x:Name="StartGame" Content="开始游戏" 
 				Height="23" Width="54pt" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="8"

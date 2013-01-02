@@ -1,0 +1,40 @@
+﻿<Page x:Class="SandBox.Pages.NewYearPlanningPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="新年度规划会议">
+
+    <Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="1*" />
+			<RowDefinition Height="3*" />
+			<RowDefinition Height="1*" />
+		</Grid.RowDefinitions>
+
+		<Viewbox Grid.Row="1">
+			<Grid>
+				<Grid Name="backgroundGrid" Width="256" Height="256" Visibility="Visible">
+					<Rectangle Fill="#FF50A7EA" Name="Rect" Visibility="Visible" />
+				</Grid>
+				<Path Data="M54.426006,49.679883C58.452019,49.679883,61.713028,52.530122,61.713028,56.040414L61.713028,63.521039 47.137981,63.521039 47.137981,56.040414C47.137981,52.530122,50.402992,49.679883,54.426006,49.679883z M30.712988,49.679883C34.737984,49.679883,37.999981,52.530122,37.999981,56.040414L37.999981,63.521039 23.424994,63.521039 23.424994,56.040414C23.424994,52.530122,26.689991,49.679883,30.712988,49.679883z M54.611019,37.849961C57.530018,37.849961 59.892014,40.210843 59.892014,43.131932 59.892014,46.053021 57.530018,48.413903 54.611019,48.413903 51.694023,48.413903 49.330025,46.053021 49.330025,43.131932 49.330025,40.210843 51.694023,37.849961 54.611019,37.849961z M30.898991,37.849961C33.81599,37.849961 36.179989,40.210843 36.179989,43.131932 36.179989,46.053021 33.81599,48.413903 30.898991,48.413903 27.981991,48.413903 25.614992,46.053021 25.614992,43.131932 25.614992,40.210843 27.981991,37.849961 30.898991,37.849961z M11.349044,13.920001C8.4320564,13.920001 6.067009,16.281026 6.067009,19.202386 6.067009,22.123992 8.4320564,24.485017 11.349044,24.485017 14.267008,24.485017 16.631018,22.123992 16.631018,19.202386 16.631018,16.281026 14.267008,13.920001 11.349044,13.920001z M0,0L65.556,0 65.556,36.519002 18.451,36.519002 18.451,30.699544C18.451,27.969796 15.19,25.750005 11.164,25.750005 7.1399999,25.750005 3.8759997,27.969796 3.8759999,30.699544L3.8759999,36.519002 0,36.519002z" Stretch="Uniform" Fill="#FFFFFFFF" Width="146" Height="146" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+					<Path.RenderTransform>
+						<TransformGroup>
+							<TransformGroup.Children>
+								<RotateTransform Angle="0" />
+								<ScaleTransform ScaleX="1" ScaleY="1" />
+							</TransformGroup.Children>
+						</TransformGroup>
+					</Path.RenderTransform>
+				</Path>
+			</Grid>
+		</Viewbox>
+
+		<Button x:Name="Next" Content="下一步" Grid.Row="2"
+				Height="23" Width="45pt" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="8"
+				Style="{DynamicResource ButtonStyle_Common}"
+				Click="Next_Click"/>
+	</Grid>
+</Page>

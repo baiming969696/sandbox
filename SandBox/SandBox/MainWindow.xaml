@@ -205,8 +205,8 @@
 					<Grid>
 						<!--<Rectangle Fill="#FFFF5965" Height="55" Margin="10,10,10,512" VerticalAlignment="Bottom"/>
 						<Rectangle Fill="#FFFF5965" Height="200" Margin="10,10,10,10" VerticalAlignment="Bottom"/>-->
-						<Rectangle Fill="#FFFF5965" Height="255" Margin="10,10,10,512" VerticalAlignment="Bottom"/>
-						<Rectangle Fill="#FFFF5965" Height="265" Margin="10,10,10,10" VerticalAlignment="Bottom"/>
+						<Rectangle Fill="#FFC7F4FF" Height="255" Margin="10,10,10,512" VerticalAlignment="Bottom"/>
+						<Rectangle Fill="#FFC7F4FF" Height="265" Margin="10,10,10,10" VerticalAlignment="Bottom"/>
 						<Image Width="1024" Height="1024" Source="img/Hourglass.png"/>
 					</Grid>
 				</Viewbox>
@@ -227,10 +227,8 @@
 			</StackPanel>
 			
 			<Frame x:Name="MainFrame" Grid.Column="1" Margin="8,32,8,8" 
-				   Source="Pages/Player_LANPage.xaml"
-				   Navigating="Frame_Navigating">
-				
-			</Frame>
+				   Navigating="Frame_Navigating"
+				   Source="Pages/PutAdvertisementPage.xaml" />
 			
 		</Grid>
 	</Grid>

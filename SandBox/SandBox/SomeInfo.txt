@@ -1,0 +1,34 @@
+﻿PageClassName                   Title                    Progress
+===============================================================================
+Player_LANPage                  连接服务器               **
+God_LANPage			            建立服务器               **
+PlayerStatePage					玩家提交状态             -
+
+NewYearPlanningPage             新年度规划会议           ***
+PutAdvertisementPage            广告费投放               **
+EnterOrderPage                  登记订单                 
+PayDutyPage                     支付应付税               
+
+NewSeasonCountingPage           季初现金盘点             -
+RepayShortTermLoanPage          更新短期贷款             
+ApplyShortTermLoanPage          申请短期贷款             
+TransportMaterialPage           原材料入库               
+OrderMaterialPage               下原料订单               
+BuyPlantPage                    厂房管理                 
+FinishProcessPage               更新生产                 
+ManageProductionLinePage        生产线管理               
+StartProcessPage                开始下一批生产           
+GatheringPage                   更新应收款               
+DeliveryProductPage             按订单交货               
+DevelopProductPage              新产品研发投资           
+SellPlantPage                   厂房出售                 
+PayExpensePage                  支付行政管理费用         
+
+ExploitMarketPage               开拓新市场
+PayLongTermLoanInterestPage     支付长期贷款利息
+RepayLongTermLoanPage           更新长期贷款
+ApplyLongTermLoanPage           申请长期贷款
+PayUpKeepPage                   支付设备维护费
+PayForPlantPage                 支付厂房费用
+DepreciationPage                计提折旧
+MarketAccessPage                领取新市场准入资格

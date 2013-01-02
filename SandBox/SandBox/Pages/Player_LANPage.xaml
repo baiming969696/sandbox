@@ -28,7 +28,7 @@
 			</Grid>
 		</Viewbox>
 
-		<Grid VerticalAlignment="Top" Margin="8,8,8,0">
+		<Grid VerticalAlignment="Top" Margin="8,8,8,0" MaxWidth="300">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition />
 				<ColumnDefinition Width="auto"/>
@@ -37,7 +37,7 @@
 			<TextBox x:Name="TextBox_HostAddress_Bg" Height="auto" TextWrapping="Wrap" VerticalAlignment="Center" Margin="8"
 					 Foreground="#FF999999" Text="Host Address" IsReadOnly="True"/>
 
-			<TextBox x:Name="TextBox_HostAddress" Height="auto" TextWrapping="Wrap" VerticalAlignment="Center" Margin="8"
+			<TextBox x:Name="TextBox_HostAddress" Height="auto" VerticalAlignment="Center" Margin="8"
 					 TextChanged="HostAddress_Changed" Background="{x:Null}"/>
 
 			<Button x:Name="ConnectServer" Content="连接服务器" Grid.Column="1"
