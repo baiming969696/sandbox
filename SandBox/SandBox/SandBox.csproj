@@ -79,12 +79,30 @@
     </Compile>
     <Compile Include="Net\Server.cs" />
     <Compile Include="Net\Client.cs" />
+    <Compile Include="Pages\BuyPlantPage.xaml.cs">
+      <DependentUpon>BuyPlantPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DeliveryProductPage.xaml.cs">
+      <DependentUpon>DeliveryProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DevelopProductPage.xaml.cs">
+      <DependentUpon>DevelopProductPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\EnterOrderPage.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>EnterOrderPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FinishProcessPage.xaml.cs">
+      <DependentUpon>FinishProcessPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GatheringPage.xaml.cs">
+      <DependentUpon>GatheringPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LANPage_Admin.xaml.cs">
       <DependentUpon>LANPage_Admin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewSeasonCountingPage.xaml.cs">
+      <DependentUpon>NewSeasonCountingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\NewYearPlanningPage.xaml.cs">
       <DependentUpon>NewYearPlanningPage.xaml</DependentUpon>
@@ -92,8 +110,32 @@
     <Compile Include="Pages\LANPage_Player.xaml.cs">
       <DependentUpon>LANPage_Player.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\OrderMaterialPage.xaml.cs">
+      <DependentUpon>OrderMaterialPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PayDutyPage.xaml.cs">
+      <DependentUpon>PayDutyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PayExpensePage.xaml.cs">
+      <DependentUpon>PayExpensePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RepayShortTermLoanPage.xaml.cs">
+      <DependentUpon>RepayShortTermLoanPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SellPlantPage.xaml.cs">
+      <DependentUpon>SellPlantPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StartProcessPage.xaml.cs">
+      <DependentUpon>StartProcessPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TestPage.xaml.cs">
+      <DependentUpon>TestPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PutAdvertisementPage.xaml.cs">
       <DependentUpon>PutAdvertisementPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TransportMaterialPage.xaml.cs">
+      <DependentUpon>TransportMaterialPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="StartupWindow.xaml.cs">
       <DependentUpon>StartupWindow.xaml</DependentUpon>
@@ -106,13 +148,37 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\BuyPlantPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DeliveryProductPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DevelopProductPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\EnterOrderPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\FinishProcessPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\GatheringPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\LANPage_Admin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NewSeasonCountingPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\NewYearPlanningPage.xaml">
       <SubType>Designer</SubType>
@@ -122,9 +188,41 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\OrderMaterialPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PayDutyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PayExpensePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\RepayShortTermLoanPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SellPlantPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\StartProcessPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\TestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PutAdvertisementPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TransportMaterialPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
       <Generator>MSBuild:Compile</Generator>

@@ -24,6 +24,6 @@
         <ListBox Margin="8,113,8,76"/>
         <Button Content="添加" HorizontalAlignment="Right" Margin="0,69,8,0" VerticalAlignment="Top" Width="60" Height="23"/>
         <Button Content="删除" HorizontalAlignment="Right" Margin="0,0,8,49" VerticalAlignment="Bottom" Width="60" Height="23"/>
+
     </Grid>
-	
 </Page>
