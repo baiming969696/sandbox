@@ -25,7 +25,7 @@ namespace SandBox
 	public partial class MainWindow : Window
 	{
 		// Controller
-		private MainAction action;
+		private AppAction action;
 
 		// BgmPlayer
 		private int		bgmIndex;
@@ -37,50 +37,25 @@ namespace SandBox
 
 		private void Startup(object sender, EventArgs e)
 		{
+			// Bind action member
+			action = (App.Current as App).action;
+			action.Update_Event += new AppAction.UpdateDelegate(PageFrame_Naviagte);
+			action.Warning_Event += new AppAction.WarningDelegate(WarningPopup_Show);
+
+			// Show Startup
 			StartupWindow win = new StartupWindow();
 			win.Closing += new CancelEventHandler(Startup_Returning);
 			win.ShowDialog();
 
-			// Title & SandGlass
-			TextBox_Year.Text = this.FindResource("String_" + action.year.ToString()) as String;
-			TextBox_Season.Text = (action.year == MainAction.Year.BeginningYear) ? "" : (String)this.FindResource("String_" + action.season.ToString());
-			SandGlass_Update(action.GetPhase());
-
-			// Other items in LeftBar
-			for (int i = 1; i < LeftBar.Children.Count; i++ )
-			{
-				TextBlock box = LeftBar.Children[i] as TextBlock;
-
-				if (i <= action.siblingPages.Count)
-				{
-					box.Text = (String)this.FindResource("String_" + action.siblingPages[i-1].ToString() + "_Name");
-					if (action.siblingPages[i-1].Equals(action.page))
-					{
-						box.FontWeight = FontWeights.Bold;
-						box.Foreground = FindResource("SBBrush_Red") as Brush;
-					}
-					else 
-					{
-						box.FontWeight = FontWeights.Normal;
-						box.Foreground = FindResource("SBBrush_Gray") as Brush;
-					}
-				}
-				else
-				{
-					box.Text = "";
-				}
-			}
-
 			// Navigate to the Page
-			PageFrame.Navigate(new Uri("Pages/"+action.page.ToString()+".xaml", UriKind.Relative));
+			PageFrame_Naviagte();
 		}
 
 		private void Startup_Returning(object sender, CancelEventArgs e)
 		{
-			action = new MainAction();
 			action.name = (sender as StartupWindow).TextBox_Nickname.Text;
-			action.role = (sender as StartupWindow).Button_Role.IsChecked.Value ? MainAction.Role.Admin : MainAction.Role.Player;
-			action.mode = (sender as StartupWindow).Button_Mode.IsChecked.Value ? MainAction.Mode.LAN : MainAction.Mode.Local;
+			action.role = (sender as StartupWindow).Button_Role.IsChecked.Value ? AppAction.Role.Admin : AppAction.Role.Player;
+			action.mode = (sender as StartupWindow).Button_Mode.IsChecked.Value ? AppAction.Mode.LAN : AppAction.Mode.Local;
 			action.Initialize();
 		}
 
@@ -180,6 +155,42 @@ namespace SandBox
 			SandGlass_Downside.Height = 175 + 270 * value;
 		}
 
+		private void PageFrame_Naviagte()
+		{
+			// Title & SandGlass
+			TextBox_Year.Text = this.FindResource("String_" + action.year.ToString()) as String;
+			TextBox_Season.Text = (action.year == AppAction.Year.BeginningYear) ? "" : (String)this.FindResource("String_" + action.season.ToString());
+			SandGlass_Update(action.GetPhase());
+
+			// Other items in LeftBar
+			for (int i = 1; i < LeftBar.Children.Count; i++)
+			{
+				TextBlock box = LeftBar.Children[i] as TextBlock;
+
+				if (i <= action.siblingPages.Count)
+				{
+					box.Text = (String)this.FindResource("String_" + action.siblingPages[i - 1].ToString() + "_Name");
+					if (action.siblingPages[i - 1].Equals(action.page))
+					{
+						box.FontWeight = FontWeights.Bold;
+						box.Foreground = FindResource("SBBrush_Red") as Brush;
+					}
+					else
+					{
+						box.FontWeight = FontWeights.Normal;
+						box.Foreground = FindResource("SBBrush_Gray") as Brush;
+					}
+				}
+				else
+				{
+					box.Text = "";
+				}
+			}
+
+			// Finally navigate
+			PageFrame.Navigate(new Uri("Pages/" + action.page.ToString() + ".xaml", UriKind.Relative));
+		}
+
 		private void PageFrame_Navigating(object sender, System.Windows.Navigation.NavigatingCancelEventArgs e)
 		{
 			if (Content != null && !_allowDirectNavigation)
@@ -230,6 +241,28 @@ namespace SandBox
 				DoubleAnimation da = new DoubleAnimation(1.0d, new Duration(TimeSpan.FromMilliseconds(200)));
 				PageFrame.BeginAnimation(OpacityProperty, da);
 			});
+		}
+
+		private void WarningPopup_Show(string str)
+		{
+			WarningPopup_Content.Text = str;
+			WarningPopup.Visibility = Visibility.Visible;
+		}
+
+		private void WarningPopup_ShutingUp(object sender, MouseButtonEventArgs e)
+		{
+			DoubleAnimation da = new DoubleAnimation(0, new Duration(TimeSpan.FromMilliseconds(100)));
+			da.Completed += WarningPopup_ShutUp;
+			WarningPopup.IsHitTestVisible = false;
+			WarningPopup.BeginAnimation(OpacityProperty, da);
+		}
+
+		private void WarningPopup_ShutUp(object sender, EventArgs e)
+		{
+			(sender as AnimationClock).Completed -= WarningPopup_ShutUp;
+			(sender as AnimationClock).Controller.Remove();
+			WarningPopup.IsHitTestVisible = true;
+			WarningPopup.Visibility = Visibility.Hidden;
 		}
 
 	}

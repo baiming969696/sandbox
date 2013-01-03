@@ -73,12 +73,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Actions\MainAction.cs" />
+    <Compile Include="Actions\AppAction.cs" />
     <Compile Include="DashWindow.xaml.cs">
       <DependentUpon>DashWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Net\Server.cs" />
     <Compile Include="Net\Client.cs" />
+    <Compile Include="Pages\EnterOrderPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>EnterOrderPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LANPage_Admin.xaml.cs">
       <DependentUpon>LANPage_Admin.xaml</DependentUpon>
     </Compile>
@@ -101,6 +105,10 @@
     <Page Include="DashWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EnterOrderPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\LANPage_Admin.xaml">
       <SubType>Designer</SubType>

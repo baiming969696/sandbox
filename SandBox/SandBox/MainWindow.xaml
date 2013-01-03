@@ -237,10 +237,29 @@
 				
 			</StackPanel>
 			
-			<Frame x:Name="PageFrame" Grid.Column="1" Margin="8,32,8,8" 
+			<Frame x:Name="PageFrame" Grid.Column="1" Margin="8,32,8,8" NavigationUIVisibility="Hidden"
 				   Navigating="PageFrame_Navigating" />
 			
 		</Grid>
+
+		<Grid x:Name="WarningPopup" Visibility="Hidden" MouseDown="WarningPopup_ShutingUp">
+			<Rectangle x:Name="WarningPopup_Background" Fill="#B0000000" />
+			<Grid VerticalAlignment="Center" Height="160">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="0.382*" />
+					<RowDefinition Height="0.618*"/>
+				</Grid.RowDefinitions>
+					
+				<Rectangle x:Name="WarningPopup_Foreground" Fill="#FF000000" Grid.RowSpan="2"/>
+
+				<TextBlock x:Name="WarningPopup_Title" Text="WARNING" FontSize="36"
+					   Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="100,0,0,0"/>
+
+				<TextBlock x:Name="WarningPopup_Content" Grid.Row="1" Text="CONTENT" FontSize="18" TextAlignment="Center"
+					   Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="100,0,0,0"/>
+			</Grid>
+		</Grid>
+		
 	</Grid>
 		
 </Window>

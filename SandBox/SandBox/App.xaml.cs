@@ -11,7 +11,12 @@ namespace SandBox
 	/// </summary>
 	public partial class App : Application
 	{
-		
+		public Actions.AppAction action;
+
+		public App()
+		{ 
+			action = new Actions.AppAction();
+		}
 	}
 
 }

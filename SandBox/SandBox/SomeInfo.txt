@@ -1,15 +1,15 @@
 ﻿PageClassName                   Title                    Progress
 ===============================================================================
-LANPage_Player                  连接服务器               *
-LANPage_Admin                   建立服务器               *
-PlayerStatePage					玩家提交状态             -
+LANPage_Player                  连接服务器               **
+LANPage_Admin                   建立服务器               **
+PlayerStatePage					玩家提交状态             ---
 
-NewYearPlanningPage             新年度规划会议           *
-PutAdvertisementPage            广告投放                 *
-EnterOrderPage                  登记订单                 
-PayDutyPage                     支付税款               
+NewYearPlanningPage             新年度规划会议           ***
+PutAdvertisementPage            广告投放                 ***
+EnterOrderPage                  登记订单                 *
+PayDutyPage                     支付税款                 
 
-NewSeasonCountingPage           季初现金盘点             -
+NewSeasonCountingPage           季初现金盘点             ---
 RepayShortTermLoanPage          短期贷款更新             
 ApplyShortTermLoanPage          短期贷款申请             
 TransportMaterialPage           原材料入库               

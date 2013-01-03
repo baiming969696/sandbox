@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace SandBox.Actions
 {	
-	public class MainAction
+	public class AppAction
 	{
 		public String name;
 		public Role role;
@@ -13,93 +13,11 @@ namespace SandBox.Actions
 		public Season season;
 		public Page page;
 		public ArrayList siblingPages;
-		
-		public void Initialize()
-		{
-			if (role == Role.Player)
-			{
-				if (mode == Mode.Local)
-				{
-					year = Year.FirstYear;
-					season = Season.BeginningSeason;
-					page = Page.NewYearPlanningPage;
-				}
-				else
-				{
-					year = Year.BeginningYear;
-					season = Season.Season_END;
-					page = Page.LANPage_Player;
-				}
-			}
-			else 
-			{
-				if (mode == Mode.Local)
-				{
-					year = Year.BeginningYear;
-					season = Season.Season_END;
-					page = Page.BlankPage;
-				}
-				else
-				{
-					year = Year.BeginningYear;
-					season = Season.Season_END;
-					page = Page.LANPage_Admin;
-				}
-			}
 
-			GetSiblingPages();
-		}
+		public event UpdateDelegate Update_Event;
+		public event WarningDelegate Warning_Event;
 
-		private void GetSiblingPages()
-		{
-			siblingPages = new ArrayList();
-
-			switch (season)
-			{
-				case Season.BeginningSeason:
-					for (Page p = Page.NewYearPlanningPage; p < Page.BeginningSeason_END; p++)
-					{
-						siblingPages.Add(p);
-					}
-					break;
-				case Season.FirstSeason:
-				case Season.SecondSeason:
-				case Season.ThirdSeason:
-				case Season.FourthSeason:
-					for (Page p = Page.RepayShortTermLoanPage; p < Page.Season_END; p++)
-					{
-						siblingPages.Add(p);
-					}
-					break;
-				case Season.EndingSeason:
-					for (Page p = Page.ExploitMarketPage; p < Page.EndingSeason_END; p++)
-					{
-						siblingPages.Add(p);
-					}
-					break;
-			}
-		}
-
-		public double GetPhase()
-		{
-			if (siblingPages.Count <= 0)
-				return 0;
-
-			double count = siblingPages.Count;
-			switch (season)
-			{
-				case Season.BeginningSeason:
-					return (page - Page.NewYearPlanningPage) / count;
-				case Season.FirstSeason:
-				case Season.SecondSeason:
-				case Season.ThirdSeason:
-				case Season.FourthSeason:
-					return (page - Page.RepayShortTermLoanPage) / count;
-				case Season.EndingSeason:
-					return (page - Page.ExploitMarketPage) / count;
-			}
-			return 0;
-		}
+		#region TypeDefinition
 
 		public enum Role
 		{
@@ -314,5 +232,158 @@ namespace SandBox.Actions
 			EndingSeason,
 			Season_END
 		}
+
+		public delegate void UpdateDelegate();
+		public delegate void WarningDelegate(string str);
+
+		#endregion
+		
+		public void Initialize()
+		{
+			if (role == Role.Player)
+			{
+				if (mode == Mode.Local)
+				{
+					year = Year.FirstYear;
+					season = Season.BeginningSeason;
+					page = Page.NewYearPlanningPage;
+				}
+				else
+				{
+					year = Year.BeginningYear;
+					season = Season.Season_END;
+					page = Page.LANPage_Player;
+				}
+			}
+			else 
+			{
+				if (mode == Mode.Local)
+				{
+					year = Year.BeginningYear;
+					season = Season.Season_END;
+					page = Page.BlankPage;
+				}
+				else
+				{
+					year = Year.BeginningYear;
+					season = Season.Season_END;
+					page = Page.LANPage_Admin;
+				}
+			}
+
+			GetSiblingPages();
+		}
+
+		public void Update()
+		{
+			if (role == Role.Player)
+			{
+				if (mode == Mode.Local)
+				{
+					page += 1;
+					switch (page)
+					{ 
+						case Page.BeginningSeason_END:
+							season += 1;
+							page = Page.RepayShortTermLoanPage;
+							GetSiblingPages();
+							break;
+						case Page.Season_END:
+							season += 1;
+							page = (season < Season.FourthSeason) ? Page.RepayShortTermLoanPage : Page.ExploitMarketPage;
+							GetSiblingPages();
+							break;
+						case Page.EndingSeason_END:
+							year += 1;
+							season = Season.BeginningSeason;
+							page = Page.NewYearPlanningPage;
+							GetSiblingPages();
+							break;
+					}
+				}
+				//else
+				//{
+				//	year = Year.BeginningYear;
+				//	season = Season.Season_END;
+				//	page = Page.LANPage_Player;
+				//}
+			}
+			else
+			{
+				//if (mode == Mode.Local)
+				//{
+				//	year = Year.BeginningYear;
+				//	season = Season.Season_END;
+				//	page = Page.BlankPage;
+				//}
+				//else
+				//{
+				//	year = Year.BeginningYear;
+				//	season = Season.Season_END;
+				//	page = Page.LANPage_Admin;
+				//}
+			}
+
+			// Call MainWindow to complete
+			Update_Event();
+		}
+
+		private void GetSiblingPages()
+		{
+			siblingPages = new ArrayList();
+
+			switch (season)
+			{
+				case Season.BeginningSeason:
+					for (Page p = Page.NewYearPlanningPage; p < Page.BeginningSeason_END; p++)
+					{
+						siblingPages.Add(p);
+					}
+					break;
+				case Season.FirstSeason:
+				case Season.SecondSeason:
+				case Season.ThirdSeason:
+				case Season.FourthSeason:
+					for (Page p = Page.RepayShortTermLoanPage; p < Page.Season_END; p++)
+					{
+						siblingPages.Add(p);
+					}
+					break;
+				case Season.EndingSeason:
+					for (Page p = Page.ExploitMarketPage; p < Page.EndingSeason_END; p++)
+					{
+						siblingPages.Add(p);
+					}
+					break;
+			}
+		}
+
+		public double GetPhase()
+		{
+			if (siblingPages.Count <= 0)
+				return 0;
+
+			double count = siblingPages.Count;
+			switch (season)
+			{
+				case Season.BeginningSeason:
+					return (page - Page.NewYearPlanningPage) / count;
+				case Season.FirstSeason:
+				case Season.SecondSeason:
+				case Season.ThirdSeason:
+				case Season.FourthSeason:
+					return (page - Page.RepayShortTermLoanPage) / count;
+				case Season.EndingSeason:
+					return (page - Page.ExploitMarketPage) / count;
+			}
+			return 0;
+		}
+
+		public void WarningBox(string str)
+		{
+			Warning_Event(str);
+		}
+
+
 	}
 }
