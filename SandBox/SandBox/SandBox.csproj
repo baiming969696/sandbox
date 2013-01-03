@@ -73,19 +73,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Actions\MainAction.cs" />
     <Compile Include="DashWindow.xaml.cs">
       <DependentUpon>DashWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Net\Server.cs" />
     <Compile Include="Net\Client.cs" />
-    <Compile Include="Pages\God_LANPage.xaml.cs">
-      <DependentUpon>God_LANPage.xaml</DependentUpon>
+    <Compile Include="Pages\LANPage_Admin.xaml.cs">
+      <DependentUpon>LANPage_Admin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\NewYearPlanningPage.xaml.cs">
       <DependentUpon>NewYearPlanningPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Player_LANPage.xaml.cs">
-      <DependentUpon>Player_LANPage.xaml</DependentUpon>
+    <Compile Include="Pages\LANPage_Player.xaml.cs">
+      <DependentUpon>LANPage_Player.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PutAdvertisementPage.xaml.cs">
       <DependentUpon>PutAdvertisementPage.xaml</DependentUpon>
@@ -101,7 +102,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\God_LANPage.xaml">
+    <Page Include="Pages\LANPage_Admin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -109,7 +110,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Player_LANPage.xaml">
+    <Page Include="Pages\LANPage_Player.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,6 +146,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="rdict\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="rdict\Strings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StartupWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

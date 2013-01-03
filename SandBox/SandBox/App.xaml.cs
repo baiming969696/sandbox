@@ -11,5 +11,7 @@ namespace SandBox
 	/// </summary>
 	public partial class App : Application
 	{
+		
 	}
+
 }

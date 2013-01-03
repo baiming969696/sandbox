@@ -1,0 +1,63 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+	<!-- Page -->
+	<sys:String x:Key="String_LANPage_Player_Name">连接服务器</sys:String>
+	<sys:String x:Key="String_LANPage_Admin_Name">建立服务器</sys:String>
+	<sys:String x:Key="String_PlayerStatePage_Name">玩家提交状态</sys:String>
+
+	<sys:String x:Key="String_NewYearPlanningPage_Name">新年度规划会议</sys:String>
+	<sys:String x:Key="String_PutAdvertisementPage_Name">广告投放</sys:String>
+	<sys:String x:Key="String_EnterOrderPage_Name">登记订单</sys:String>
+	<sys:String x:Key="String_PayDutyPage_Name">支付税款</sys:String>
+
+	<sys:String x:Key="String_NewSeasonCountingPage_Name">季初现金盘点</sys:String>
+	<sys:String x:Key="String_RepayShortTermLoanPage_Name">短期贷款更新</sys:String>
+	<sys:String x:Key="String_ApplyShortTermLoanPage_Name">短期贷款申请</sys:String>
+	<sys:String x:Key="String_TransportMaterialPage_Name">原材料入库</sys:String>
+	<sys:String x:Key="String_OrderMaterialPage_Name">原材料下单</sys:String>
+	<sys:String x:Key="String_BuyPlantPage_Name">厂房租购</sys:String>
+	<sys:String x:Key="String_FinishProcessPage_Name">更新生产</sys:String>
+	<sys:String x:Key="String_ManageProductionLinePage_Name">生产线管理</sys:String>
+	<sys:String x:Key="String_StartProcessPage_Name">开始下批生产</sys:String>
+	<sys:String x:Key="String_GatheringPage_Name">更新应收款</sys:String>
+	<sys:String x:Key="String_DeliveryProductPage_Name">按订单交货</sys:String>
+	<sys:String x:Key="String_DevelopProductPage_Name">新产品研发投资</sys:String>
+	<sys:String x:Key="String_SellPlantPage_Name">厂房出售</sys:String>
+	<sys:String x:Key="String_PayExpensePage_Name">支付行政管理费用</sys:String>
+
+	<sys:String x:Key="String_ExploitMarketPage_Name">开拓新市场</sys:String>
+	<sys:String x:Key="String_PayLongTermLoanInterestPage_Name">长期贷款利息支付</sys:String>
+	<sys:String x:Key="String_RepayLongTermLoanPage_Name">长期贷款更新</sys:String>
+	<sys:String x:Key="String_ApplyLongTermLoanPage_Name">长期贷款申请</sys:String>
+	<sys:String x:Key="String_PayUpKeepPage_Name">设备维护费支付</sys:String>
+	<sys:String x:Key="String_PayForPlantPage_Name">厂房费用支付</sys:String>
+	<sys:String x:Key="String_DepreciationPage_Name">计提折旧</sys:String>
+	<sys:String x:Key="String_MarketAccessPage_Name">领取新市场准入资格</sys:String>
+
+	
+	<!-- Year -->
+	<sys:String x:Key="String_BeginningYear">初</sys:String>
+	<sys:String x:Key="String_FirstYear">壹</sys:String>
+	<sys:String x:Key="String_SecondYear">贰</sys:String>
+	<sys:String x:Key="String_ThirdYear">叁</sys:String>
+	<sys:String x:Key="String_FourthYear">初</sys:String>
+	<sys:String x:Key="String_FifthYear">初</sys:String>
+	<sys:String x:Key="String_SixthYear">初</sys:String>
+	<sys:String x:Key="String_SeventhYear">初</sys:String>
+	<sys:String x:Key="String_EightthYear">初</sys:String>
+	<sys:String x:Key="String_NinthYear">初</sys:String>
+	<sys:String x:Key="String_TenthYear">初</sys:String>
+
+	
+	<!-- Season -->
+	<sys:String x:Key="String_BeginningSeason">年初</sys:String>
+	<sys:String x:Key="String_FirstSeason">一季度</sys:String>
+	<sys:String x:Key="String_SecondSeason">二季度</sys:String>
+	<sys:String x:Key="String_ThirdSeason">三季度</sys:String>
+	<sys:String x:Key="String_FourthSeason">四季度</sys:String>
+	<sys:String x:Key="String_EndingSeason">年末</sys:String>
+	<sys:String x:Key="String_Season_END">[Error]</sys:String>
+	
+</ResourceDictionary>

@@ -35,22 +35,19 @@ namespace SandBox
 
 		private void Button_Login_Click(object sender, RoutedEventArgs e)
 		{
-			// Save the information
-			
-			// To main window
+			if (TextBox_Nickname.Text == "")
+			{
+				TextBox_Nickname.Text = "Unnamed";
+			}
+
+			// Back to main window
+			// It will activate the "Closing " event and call MainAction to gather the information here
 			this.Close();
 		}
 
 		private void Nickname_Changed(object sender, System.Windows.Controls.TextChangedEventArgs e)
 		{
-			if (TextBox_Nickname.Text == "")
-			{
-				TextBox_Nickname_Bg.Visibility = Visibility.Visible;
-			}
-			else
-			{
-				TextBox_Nickname_Bg.Visibility = Visibility.Hidden;
-			}
+			TextBox_Nickname_Bg.Visibility = (TextBox_Nickname.Text == "") ? Visibility.Visible : Visibility.Hidden;
 		}
 
 	}

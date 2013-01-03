@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace SandBox.Pages
 {
 	/// <summary>
-	/// God_LANPage.xaml 的交互逻辑
+	/// LANPage_Admin.xaml 的交互逻辑
 	/// </summary>
-	public partial class God_LANPage : Page
+	public partial class LANPage_Admin : Page
 	{
-		public God_LANPage()
+		public LANPage_Admin()
 		{
 			InitializeComponent();
 		}

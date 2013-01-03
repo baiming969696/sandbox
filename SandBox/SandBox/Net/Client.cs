@@ -10,7 +10,7 @@ namespace SandBox.Net
 {
 	public class Client
 	{
-		#region "Define Variables"
+		#region DefineVariables
 			public String hostIP;
 			protected IPAddress _hostIP;
 

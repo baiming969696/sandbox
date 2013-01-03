@@ -1,4 +1,4 @@
-﻿<Page x:Class="SandBox.Pages.Player_LANPage"
+﻿<Page x:Class="SandBox.Pages.LANPage_Player"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -10,8 +10,9 @@
 	<Page.Resources>
 		<Storyboard x:Key="Background_Picture_Brighter">
 			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Background_Picture">
-				<EasingColorKeyFrame KeyTime="0:0:0.3" Value="sc#1, 0.594488, 0.65573, 0.7430012"/>
-				<EasingColorKeyFrame KeyTime="0:0:0.5" Value="#FF50A7EA"/>
+				<EasingColorKeyFrame KeyTime="0" Value="#FFDDDDDD"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.3" Value="sc#1, 0.7784441, 0.6697263, 0.598423839"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.5" Value="{StaticResource SBColor_Orange}"/>
 			</ColorAnimationUsingKeyFrames>
 		</Storyboard>
 	</Page.Resources>

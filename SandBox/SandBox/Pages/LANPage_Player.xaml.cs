@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace SandBox.Pages
 {
 	/// <summary>
-	/// LANPage.xaml 的交互逻辑
+	/// LANPage_Player.xaml 的交互逻辑
 	/// </summary>
-	public partial class Player_LANPage : Page
+	public partial class LANPage_Player : Page
 	{
-		public Player_LANPage()
+		public LANPage_Player()
 		{
 			InitializeComponent();
 		}
@@ -28,7 +28,7 @@ namespace SandBox.Pages
 		private void ConnectServer_Click(object sender, RoutedEventArgs e)
 		{
 			// if succeeded
-			Storyboard myStoryboard = (Storyboard)this.FindResource("Background_Picture_Brighter");
+			Storyboard myStoryboard = this.FindResource("Background_Picture_Brighter") as Storyboard;
 			myStoryboard.Begin();
 		}
 		

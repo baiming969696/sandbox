@@ -7,8 +7,10 @@
 		<!-- 应该在此定义应用程序级的资源。-->
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="rdict/Colors.xaml"/>
 				<ResourceDictionary Source="rdict/Brushes.xaml"/>
 				<ResourceDictionary Source="rdict/ButtonStyles.xaml"/>
+				<ResourceDictionary Source="rdict/Strings.xaml"/>
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Application.Resources>
