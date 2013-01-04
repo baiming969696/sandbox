@@ -93,19 +93,9 @@ namespace SandBox.Actions
 			BeginningSeason_END,
 
 			/// <summary>
-			/// 季初现金盘点
+			/// 短期贷款管理
 			/// </summary>
-			//NewSeasonCountingPage = 200,
-
-			/// <summary>
-			/// 短期贷款更新
-			/// </summary>
-			RepayShortTermLoanPage,
-
-			/// <summary>
-			/// 短期贷款申请
-			/// </summary>
-			ApplyShortTermLoanPage,
+			ManageShortTermLoanPage = 200,
 
 			/// <summary>
 			/// 原材料入库
@@ -285,12 +275,12 @@ namespace SandBox.Actions
 					{ 
 						case Page.BeginningSeason_END:
 							season += 1;
-							page = Page.RepayShortTermLoanPage;
+							page = Page.ManageShortTermLoanPage;
 							GetSiblingPages();
 							break;
 						case Page.Season_END:
 							season += 1;
-							page = (season < Season.FourthSeason) ? Page.RepayShortTermLoanPage : Page.ExploitMarketPage;
+							page = (season < Season.FourthSeason) ? Page.ManageShortTermLoanPage : Page.ExploitMarketPage;
 							GetSiblingPages();
 							break;
 						case Page.EndingSeason_END:
@@ -344,7 +334,7 @@ namespace SandBox.Actions
 				case Season.SecondSeason:
 				case Season.ThirdSeason:
 				case Season.FourthSeason:
-					for (Page p = Page.RepayShortTermLoanPage; p < Page.Season_END; p++)
+					for (Page p = Page.ManageShortTermLoanPage; p < Page.Season_END; p++)
 					{
 						siblingPages.Add(p);
 					}
@@ -372,7 +362,7 @@ namespace SandBox.Actions
 				case Season.SecondSeason:
 				case Season.ThirdSeason:
 				case Season.FourthSeason:
-					return (page - Page.RepayShortTermLoanPage) / count;
+					return (page - Page.ManageShortTermLoanPage) / count;
 				case Season.EndingSeason:
 					return (page - Page.ExploitMarketPage) / count;
 			}

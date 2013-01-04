@@ -169,7 +169,7 @@ namespace SandBox
 
 				if (i <= action.siblingPages.Count)
 				{
-					box.Text = (String)this.FindResource("String_" + action.siblingPages[i - 1].ToString() + "_Name");
+					box.Text = (String)this.FindResource("String_" + action.siblingPages[i - 1].ToString());
 					if (action.siblingPages[i - 1].Equals(action.page))
 					{
 						box.FontWeight = FontWeights.Bold;

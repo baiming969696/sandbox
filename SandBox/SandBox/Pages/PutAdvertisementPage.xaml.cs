@@ -70,7 +70,7 @@ namespace SandBox.Pages
 		{
 			if (!TextBox_Amount.IsReadOnly)
 			{ 
-				(App.Current as App).action.WarningBox("请输入金额");
+				(App.Current as App).action.WarningBox("请输入金额并确认");
 				return;
 			}
 			

@@ -19,9 +19,16 @@ namespace SandBox.Pages
     /// </summary>
     public partial class PayDutyPage : Page
     {
+
         public PayDutyPage()
         {
-            InitializeComponent();
+			InitializeComponent();
         }
+
+		private void Next_Click(object sender, RoutedEventArgs e)
+		{
+			(App.Current as App).action.Update();
+		}
+
     }
 }

@@ -28,5 +28,6 @@ namespace SandBox.Pages
 		{
 			(App.Current as App).action.Update();
 		}
+
 	}
 }

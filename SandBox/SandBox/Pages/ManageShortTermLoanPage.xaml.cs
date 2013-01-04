@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace SandBox.Pages
 {
     /// <summary>
-    /// EnterOrderPage.xaml 的交互逻辑
+	/// ManageShortTermLoanPage.xaml 的交互逻辑
     /// </summary>
-    public partial class EnterOrderPage : Page
+    public partial class ManageShortTermLoanPage : Page
     {
-        public EnterOrderPage()
+		public ManageShortTermLoanPage()
         {
             InitializeComponent();
         }
@@ -28,16 +28,5 @@ namespace SandBox.Pages
 		{
 			(App.Current as App).action.Update();
 		}
-
-		private void Add_Click(object sender, RoutedEventArgs e)
-		{
-
-		}
-
-		private void Delete_Click(object sender, RoutedEventArgs e)
-		{
-
-		}
-
     }
 }

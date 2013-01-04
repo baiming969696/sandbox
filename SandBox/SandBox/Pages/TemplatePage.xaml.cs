@@ -14,14 +14,19 @@ using System.Windows.Shapes;
 
 namespace SandBox.Pages
 {
-    /// <summary>
-    /// NewSeasonCountingPage.xaml 的交互逻辑
-    /// </summary>
-    public partial class NewSeasonCountingPage : Page
-    {
-        public NewSeasonCountingPage()
-        {
-            InitializeComponent();
-        }
-    }
+	/// <summary>
+	/// TemplatePage.xaml 的交互逻辑
+	/// </summary>
+	public partial class TemplatePage : Page
+	{
+		public TemplatePage()
+		{
+			InitializeComponent();
+		}
+
+		private void Next_Click(object sender, RoutedEventArgs e)
+		{
+			(App.Current as App).action.Update();
+		}
+	}
 }

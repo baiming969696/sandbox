@@ -1,37 +1,30 @@
-﻿<Page x:Class="SandBox.Pages.BuyPlantPage"
+﻿<Page x:Class="SandBox.Pages.ManageShortTermLoanPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="厂房租购">
+	Title="短期贷款管理">
 
     <Grid>
-    	<UniformGrid Margin="57,88.5,43,41.5" Rows="7" Columns="3" Width="200" Height="170">
-    		<TextBlock Margin="0,0,0,0" TextWrapping="Wrap" TextAlignment="Center"><Run Language="zh-cn" Text="厂房类型"/></TextBlock>
-    		<TextBlock Margin="0,0,0,0" TextWrapping="Wrap" TextAlignment="Center"><Run Language="zh-cn" Text="租赁价格"/></TextBlock>
-    		<TextBlock Margin="0,0,0,0" TextWrapping="Wrap" TextAlignment="Center"><Run Language="zh-cn" Text="租赁数量"/></TextBlock>
-    		<TextBlock Margin="0,0,0,0" TextWrapping="Wrap" TextAlignment="Center"><Run Language="zh-cn" Text="大厂房"/></TextBlock>
-    		<TextBlock Margin="0,0,0,0" TextWrapping="Wrap" TextAlignment="Center"><Run Language="zh-cn" Text="10"/></TextBlock>
-    		<TextBox Margin="0,0,0,0" TextWrapping="Wrap" Text="0&#xa;1" Height="21.6" VerticalScrollBarVisibility="Visible" VerticalAlignment="Top"/>
-    		<TextBlock Margin="0,0,0,0" TextWrapping="Wrap" TextAlignment="Center"><Run Language="zh-cn" Text="小厂房"/></TextBlock>
-    		<TextBlock Margin="0,0,0,0" TextWrapping="Wrap" TextAlignment="Center"><Run Language="zh-cn" Text="5"/></TextBlock>
-    		<TextBox Margin="0,0,0,0" TextWrapping="Wrap" Text="0&#xa;1" Height="21.6" VerticalScrollBarVisibility="Visible" VerticalAlignment="Top"/>
-    		<TextBlock Margin="0,0,0,0" TextWrapping="Wrap" TextAlignment="Center"><Run Language="zh-cn" Text=""/></TextBlock>
-    		<TextBlock Margin="0,0,0,0" TextWrapping="Wrap" TextAlignment="Center"><Run Language="zh-cn" Text=""/></TextBlock>
-    		<TextBlock Margin="0,0,0,0" TextWrapping="Wrap" TextAlignment="Center"><Run Language="zh-cn" Text=""/></TextBlock>
-			<TextBlock Margin="0,0,0,0" TextWrapping="Wrap" TextAlignment="Center"><Run Language="zh-cn" Text="厂房类型"/></TextBlock>
-    		<TextBlock Margin="0,0,0,0" TextWrapping="Wrap" TextAlignment="Center"><Run Language="zh-cn" Text="购买价格"/></TextBlock>
-    		<TextBlock Margin="0,0,0,0" TextWrapping="Wrap" TextAlignment="Center"><Run Language="zh-cn" Text="购买数量"/></TextBlock>
-			<TextBlock Margin="0,0,0,0" TextWrapping="Wrap" TextAlignment="Center"><Run Language="zh-cn" Text="大厂房"/></TextBlock>
-    		<TextBlock Margin="0,0,0,0" TextWrapping="Wrap" TextAlignment="Center"><Run Language="zh-cn" Text="30"/></TextBlock>
-    		<TextBox Margin="0,0,0,0" TextWrapping="Wrap" Text="0&#xa;1" Height="21.6" VerticalScrollBarVisibility="Visible" VerticalAlignment="Top"/>
-    		<TextBlock Margin="0,0,0,0" TextWrapping="Wrap" TextAlignment="Center"><Run Language="zh-cn" Text="小厂房"/></TextBlock>
-    		<TextBlock Margin="0,0,0,0" TextWrapping="Wrap" TextAlignment="Center"><Run Language="zh-cn" Text="15"/></TextBlock>
-    		<TextBox Margin="0,0,0,0" TextWrapping="Wrap" Text="0&#xa;1" Height="21.6" VerticalScrollBarVisibility="Visible" VerticalAlignment="Top"/>
+    	<DataGrid Margin="35,51.333,34,143"/>
 
-    	</UniformGrid>
+    	<TextBlock HorizontalAlignment="Left" Height="25.333" Margin="35,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" FontSize="13.333"><Run Language="zh-cn" Text="短期贷款信息"/></TextBlock>
+    	<Grid Height="47" Margin="0,0,8,48" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="284">
+    		<Grid.RowDefinitions>
+    			<RowDefinition Height="0.511*"/>
+    			<RowDefinition Height="0.489*"/>
+    		</Grid.RowDefinitions>
+    		<Grid.ColumnDefinitions>
+    			<ColumnDefinition Width="0.447*"/>
+    			<ColumnDefinition Width="0.275*"/>
+    			<ColumnDefinition Width="0.278*"/>
+    		</Grid.ColumnDefinitions>
+    		<TextBox Margin="4,2,8,0" Grid.Row="1" TextWrapping="Wrap" Text="0"/>
+    		<Button Content="申请" Grid.Column="1" Margin="8,2,8,0" Grid.Row="1" Style="{DynamicResource ButtonStyle_Common}"/>
+    		<TextBlock Margin="4,0,8,2" TextWrapping="Wrap" Text="申请短期贷款"/>
+    	</Grid>
 
 		<Viewbox x:Name="Help"
 				 HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="8" Width="40" Height="40">
@@ -41,7 +34,7 @@
 				<ToolTip Foreground="White" Background="Black" Opacity="0.6" ToolTipService.Placement="Top">
 					<StackPanel>
 						<TextBlock Width="auto" MaxWidth="450" Height="auto" FontSize="12pt" Margin="0,0,0,4">
-							厂房租购
+							短期贷款管理
 						</TextBlock>
 						<TextBlock x:Name="Help_Content" Width="auto" MaxWidth="450" Height="auto" TextWrapping="Wrap">
 							帮助内容
@@ -55,6 +48,5 @@
 				Height="23" Width="45pt" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="8"
 				Style="{StaticResource ButtonStyle_Common}"
 				Click="Next_Click"/>
-
 	</Grid>
 </Page>

@@ -4,6 +4,7 @@
 	<Color x:Key="SBColor_Blue">#FF50A7EA</Color>
 	<Color x:Key="SBColor_Red">#FFFF5965</Color>
 	<Color x:Key="SBColor_Yellow">#FFFFFB59</Color>
+	<Color x:Key="SBColor_Green">#FF67E650</Color>
 	<Color x:Key="SBColor_Orange">#FFFFB459</Color>
 	<Color x:Key="SBColor_Gray">#FF999999</Color>
 	<Color x:Key="SBColor_Sand">#FFAC9C7b</Color>

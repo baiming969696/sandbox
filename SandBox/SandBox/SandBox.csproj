@@ -101,9 +101,6 @@
     <Compile Include="Pages\LANPage_Admin.xaml.cs">
       <DependentUpon>LANPage_Admin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\NewSeasonCountingPage.xaml.cs">
-      <DependentUpon>NewSeasonCountingPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\NewYearPlanningPage.xaml.cs">
       <DependentUpon>NewYearPlanningPage.xaml</DependentUpon>
     </Compile>
@@ -119,14 +116,17 @@
     <Compile Include="Pages\PayExpensePage.xaml.cs">
       <DependentUpon>PayExpensePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RepayShortTermLoanPage.xaml.cs">
-      <DependentUpon>RepayShortTermLoanPage.xaml</DependentUpon>
+    <Compile Include="Pages\ManageShortTermLoanPage.xaml.cs">
+      <DependentUpon>ManageShortTermLoanPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SellPlantPage.xaml.cs">
       <DependentUpon>SellPlantPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\StartProcessPage.xaml.cs">
       <DependentUpon>StartProcessPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TemplatePage.xaml.cs">
+      <DependentUpon>TemplatePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\TestPage.xaml.cs">
       <DependentUpon>TestPage.xaml</DependentUpon>
@@ -176,10 +176,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\NewSeasonCountingPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Pages\NewYearPlanningPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -200,7 +196,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\RepayShortTermLoanPage.xaml">
+    <Page Include="Pages\ManageShortTermLoanPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -211,6 +207,10 @@
     <Page Include="Pages\StartProcessPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\TemplatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\TestPage.xaml">
       <SubType>Designer</SubType>

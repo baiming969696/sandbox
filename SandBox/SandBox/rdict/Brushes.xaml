@@ -6,6 +6,7 @@
 	<SolidColorBrush x:Key="SBBrush_Blue" Color="{StaticResource SBColor_Blue}"/>
 	<SolidColorBrush x:Key="SBBrush_Red" Color="{StaticResource SBColor_Red}"/>
 	<SolidColorBrush x:Key="SBBrush_Yellow" Color="{StaticResource SBColor_Yellow}"/>
+	<SolidColorBrush x:Key="SBBrush_Green" Color="{StaticResource SBColor_Green}"/>
 	<SolidColorBrush x:Key="SBBrush_Orange" Color="{StaticResource SBColor_Orange}"/>
 	<SolidColorBrush x:Key="SBBrush_Gray" Color="{StaticResource SBColor_Gray}"/>
 	<SolidColorBrush x:Key="SBBrush_Sand" Color="{StaticResource SBColor_Sand}"/>
