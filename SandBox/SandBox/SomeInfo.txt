@@ -12,21 +12,15 @@ PayDutyPage                     支付税款                 ***
 ManageShortTermLoanPage         短期贷款管理			 *
 TransportMaterialPage           原材料入库               *
 OrderMaterialPage               原材料下单               *
-BuyPlantPage                    厂房租购                 *
-FinishProcessPage               更新生产                 ***
-ManageProductionLinePage        生产线管理               
+FinishProcessPage               更新生产                 ***            
 StartProcessPage                开始下批生产           
 GatheringPage                   更新应收款               
 DeliveryProductPage             按订单交货               
 DevelopProductPage              新产品研发投资           
-SellPlantPage                   厂房出售                 
 PayExpensePage                  支付行政管理费用         
 
 ExploitMarketPage               开拓新市场
-PayLongTermLoanInterestPage     长期贷款利息支付
-RepayLongTermLoanPage           长期贷款更新
-ApplyLongTermLoanPage           长期贷款申请
+ManageLongTermLoanPage          长期贷款管理
 PayUpKeepPage                   设备维护费支付
-PayForPlantPage                 厂房费用支付
 DepreciationPage                计提折旧
 MarketAccessPage                领取新市场准入资格

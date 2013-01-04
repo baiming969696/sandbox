@@ -85,6 +85,9 @@
     <Compile Include="Pages\DeliveryProductPage.xaml.cs">
       <DependentUpon>DeliveryProductPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DepreciationPage.xaml.cs">
+      <DependentUpon>DepreciationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DevelopProductPage.xaml.cs">
       <DependentUpon>DevelopProductPage.xaml</DependentUpon>
     </Compile>
@@ -100,6 +103,12 @@
     </Compile>
     <Compile Include="Pages\LANPage_Admin.xaml.cs">
       <DependentUpon>LANPage_Admin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ManageLongTermLoanPage.xaml.cs">
+      <DependentUpon>ManageLongTermLoanPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MarketAccessPage.xaml.cs">
+      <DependentUpon>MarketAccessPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\NewYearPlanningPage.xaml.cs">
       <DependentUpon>NewYearPlanningPage.xaml</DependentUpon>
@@ -118,6 +127,12 @@
     </Compile>
     <Compile Include="Pages\ManageShortTermLoanPage.xaml.cs">
       <DependentUpon>ManageShortTermLoanPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PayForPlantPage.xaml.cs">
+      <DependentUpon>PayForPlantPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PayUpKeepPage.xaml.cs">
+      <DependentUpon>PayUpKeepPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SellPlantPage.xaml.cs">
       <DependentUpon>SellPlantPage.xaml</DependentUpon>
@@ -156,6 +171,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\DepreciationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\DevelopProductPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -175,6 +194,14 @@
     <Page Include="Pages\LANPage_Admin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ManageLongTermLoanPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\MarketAccessPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\NewYearPlanningPage.xaml">
       <SubType>Designer</SubType>
@@ -197,6 +224,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\ManageShortTermLoanPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PayForPlantPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PayUpKeepPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

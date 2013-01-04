@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandBox", "SandBox\SandBox.csproj", "{77780541-806a-4a52-81b4-c016e8b252fc}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandBox", "SandBox\SandBox.csproj", "{77780541-806A-4A52-81B4-C016E8B252FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,5 +13,8 @@ Global
 		{77780541-806A-4A52-81B4-C016E8B252FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77780541-806A-4A52-81B4-C016E8B252FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77780541-806A-4A52-81B4-C016E8B252FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
