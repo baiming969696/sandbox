@@ -108,19 +108,9 @@ namespace SandBox.Actions
 			OrderMaterialPage,
 
 			/// <summary>
-			/// 厂房租购
-			/// </summary>
-			BuyPlantPage,
-
-			/// <summary>
 			/// 更新生产
 			/// </summary>
 			FinishProcessPage,
-
-			/// <summary>
-			/// 生产线管理
-			/// </summary>
-			ManageProductionLinePage,
 
 			/// <summary>
 			/// 开始下批生产
@@ -143,11 +133,6 @@ namespace SandBox.Actions
 			DevelopProductPage,
 
 			/// <summary>
-			/// 厂房出售
-			/// </summary>
-			SellPlantPage,
-
-			/// <summary>
 			/// 支付行政管理费用
 			/// </summary>
 			PayExpensePage,
@@ -160,29 +145,14 @@ namespace SandBox.Actions
 			ExploitMarketPage = 300,
 
 			/// <summary>
-			/// 长期贷款利息支付
+			/// 长期贷款管理
 			/// </summary>
-			PayLongTermLoanInterestPage,
-
-			/// <summary>
-			/// 长期贷款更新
-			/// </summary>
-			RepayLongTermLoanPage,
-
-			/// <summary>
-			/// 长期贷款申请
-			/// </summary>
-			ApplyLongTermLoanPage,
+            ManageLongTermLoanPage,
 
 			/// <summary>
 			/// 设备维护费支付
 			/// </summary>
 			PayUpKeepPage,
-
-			/// <summary>
-			/// 厂房费用支付
-			/// </summary>
-			PayForPlantPage,
 
 			/// <summary>
 			/// 计提折旧
@@ -280,7 +250,7 @@ namespace SandBox.Actions
 							break;
 						case Page.Season_END:
 							season += 1;
-							page = (season < Season.FourthSeason) ? Page.ManageShortTermLoanPage : Page.ExploitMarketPage;
+							page = (season < Season.EndingSeason) ? Page.ManageShortTermLoanPage : Page.ExploitMarketPage;
 							GetSiblingPages();
 							break;
 						case Page.EndingSeason_END:

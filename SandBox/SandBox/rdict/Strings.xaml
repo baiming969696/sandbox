@@ -15,22 +15,16 @@
 	<sys:String x:Key="String_ManageShortTermLoanPage">短期贷款管理</sys:String>
 	<sys:String x:Key="String_TransportMaterialPage">原材料入库</sys:String>
 	<sys:String x:Key="String_OrderMaterialPage">原材料下单</sys:String>
-	<sys:String x:Key="String_BuyPlantPage">厂房租购</sys:String>
 	<sys:String x:Key="String_FinishProcessPage">更新生产</sys:String>
-	<sys:String x:Key="String_ManageProductionLinePage">生产线管理</sys:String>
 	<sys:String x:Key="String_StartProcessPage">开始下批生产</sys:String>
 	<sys:String x:Key="String_GatheringPage">更新应收款</sys:String>
 	<sys:String x:Key="String_DeliveryProductPage">按订单交货</sys:String>
 	<sys:String x:Key="String_DevelopProductPage">新产品研发投资</sys:String>
-	<sys:String x:Key="String_SellPlantPage">厂房出售</sys:String>
 	<sys:String x:Key="String_PayExpensePage">支付行政管理费用</sys:String>
 
 	<sys:String x:Key="String_ExploitMarketPage">开拓新市场</sys:String>
-	<sys:String x:Key="String_PayLongTermLoanInterestPage">长期贷款利息支付</sys:String>
-	<sys:String x:Key="String_RepayLongTermLoanPage">长期贷款更新</sys:String>
-	<sys:String x:Key="String_ApplyLongTermLoanPage">长期贷款申请</sys:String>
+    <sys:String x:Key="String_ManageLongTermLoanPage">长期贷款管理</sys:String>
 	<sys:String x:Key="String_PayUpKeepPage">设备维护费支付</sys:String>
-	<sys:String x:Key="String_PayForPlantPage">厂房费用支付</sys:String>
 	<sys:String x:Key="String_DepreciationPage">计提折旧</sys:String>
 	<sys:String x:Key="String_MarketAccessPage">领取新市场准入资格</sys:String>
 

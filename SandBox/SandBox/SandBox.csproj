@@ -79,9 +79,6 @@
     </Compile>
     <Compile Include="Net\Server.cs" />
     <Compile Include="Net\Client.cs" />
-    <Compile Include="Pages\BuyPlantPage.xaml.cs">
-      <DependentUpon>BuyPlantPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\DeliveryProductPage.xaml.cs">
       <DependentUpon>DeliveryProductPage.xaml</DependentUpon>
     </Compile>
@@ -94,6 +91,9 @@
     <Compile Include="Pages\EnterOrderPage.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>EnterOrderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ExploitMarketPage.xaml.cs">
+      <DependentUpon>ExploitMarketPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\FinishProcessPage.xaml.cs">
       <DependentUpon>FinishProcessPage.xaml</DependentUpon>
@@ -128,14 +128,8 @@
     <Compile Include="Pages\ManageShortTermLoanPage.xaml.cs">
       <DependentUpon>ManageShortTermLoanPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PayForPlantPage.xaml.cs">
-      <DependentUpon>PayForPlantPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\PayUpKeepPage.xaml.cs">
       <DependentUpon>PayUpKeepPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SellPlantPage.xaml.cs">
-      <DependentUpon>SellPlantPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\StartProcessPage.xaml.cs">
       <DependentUpon>StartProcessPage.xaml</DependentUpon>
@@ -163,10 +157,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\BuyPlantPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Pages\DeliveryProductPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -182,6 +172,10 @@
     <Page Include="Pages\EnterOrderPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ExploitMarketPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\FinishProcessPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -227,15 +221,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\PayForPlantPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Pages\PayUpKeepPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\SellPlantPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

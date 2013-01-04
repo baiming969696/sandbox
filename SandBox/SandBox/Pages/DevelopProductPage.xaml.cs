@@ -23,5 +23,11 @@ namespace SandBox.Pages
         {
             InitializeComponent();
         }
+
+        private void Next_Click(object sender, RoutedEventArgs e)
+        {
+            (App.Current as App).action.Update();
+        }
+
     }
 }
